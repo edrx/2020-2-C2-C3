@@ -1,0 +1,361 @@
+% (find-LATEX "2020-2-C3-aceleracao.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2020-2-C3-aceleracao.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2020-2-C3-aceleracao.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2020-2-C3-aceleracao.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2020-2-C3-aceleracao.pdf"))
+% (defun e () (interactive) (find-LATEX "2020-2-C3-aceleracao.tex"))
+% (defun o () (interactive) (find-LATEX "2020-2-C3-aceleracao.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2020-2-C3-aceleracao"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+% (defun d0 () (interactive) (find-ebuffer "2020-2-C3-aceleracao.pdf"))
+% (find-pdf-page   "~/LATEX/2020-2-C3-aceleracao.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2020-2-C3-aceleracao.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2020-2-C3-aceleracao.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2020-2-C3-aceleracao.pdf")
+%   file:///home/edrx/LATEX/2020-2-C3-aceleracao.pdf
+%               file:///tmp/2020-2-C3-aceleracao.pdf
+%           file:///tmp/pen/2020-2-C3-aceleracao.pdf
+% http://angg.twu.net/LATEX/2020-2-C3-aceleracao.pdf
+% (find-LATEX "2019.mk")
+% (find-CN-aula-links "2020-2-C3-aceleracao" "3" "c3m202acel" "c3m202ac")
+%
+% Video:
+% (find-ssr-links "c3m202acel" "2020-2-C3-aceleracao")
+% (code-video     "c3m202acelvideo" "$S/http/angg.twu.net/eev-videos/2020-2-C3-aceleracao.mp4")
+% (find-c3m202acelvideo "0:00")
+% (find-c3m202acelvideo "3:00")
+% (find-c3m202acelvideo "3:40")
+% (find-c3m202acelvideo "14:56" "interpretação geométrica de g e g'")
+
+% (find-ssr-links "c3m202acel" "2020-2-C3-aceleracao-2")
+% (code-video "c3m202acelvideo" "$S/http/angg.twu.net/eev-videos/2020-2-C3-aceleracao-2.mp4")
+% (find-c3m202acelvideo "0:00")
+% (find-c3m202acelvideo "1:18" "exercicio 2")
+% (find-c3m202acelvideo "2:20" "com 0 vai ser bem fácil de calcular")
+% (find-c3m202acelvideo "2:34" "motivação antes de prosseguir")
+% (find-c3m202acelvideo "4:11" "aproximações pro seno")
+% (find-c3m202acelvideo "4:55" "aos pouquinhos")
+% (find-c3m202acelvideo "6:10" "quando a gente troca esse 0 daqui por 1")
+
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.MRU»	(to "MRU")
+% «.video»	(to "video")
+% «.exercicio-2»	(to "exercicio-2")
+%
+% «.djvuize»	(to "djvuize")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx15}               % (find-LATEX "edrx15.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrxchars.tex              % (find-LATEX "edrxchars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+%\catcode`\^^J=10
+%\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+
+% %L dofile "edrxtikz.lua"  -- (find-LATEX "edrxtikz.lua")
+% %L dofile "edrxpict.lua"  -- (find-LATEX "edrxpict.lua")
+% \pu
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx15.sty" "colors-2019")
+\long\def\ColorRed   #1{{\color{Red1}#1}}
+\long\def\ColorViolet#1{{\color{MagentaVioletLight}#1}}
+\long\def\ColorViolet#1{{\color{Violet!50!black}#1}}
+\long\def\ColorGreen #1{{\color{SpringDarkHard}#1}}
+\long\def\ColorGreen #1{{\color{SpringGreenDark}#1}}
+\long\def\ColorGreen #1{{\color{SpringGreen4}#1}}
+\long\def\ColorGray  #1{{\color{GrayLight}#1}}
+\long\def\ColorGray  #1{{\color{black!30!white}#1}}
+\long\def\ColorBrown #1{{\color{Brown}#1}}
+\long\def\ColorBrown #1{{\color{brown}#1}}
+
+\long\def\ColorShort #1{{\color{SpringGreen4}#1}}
+\long\def\ColorLong  #1{{\color{Red1}#1}}
+
+\def\frown{\ensuremath{{=}{(}}}
+\def\True {\mathbf{V}}
+\def\False{\mathbf{F}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2020-2-C3.pdf}
+\def\drafturl{http://angg.twu.net/2020.2-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m202acelp 1 "title")
+% (c3m202acel    "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2020.2}
+
+\bsk
+
+Aula 3: o vetor aceleração
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2020.2-C3.html}
+
+\end{center}
+
+\newpage
+
+% «MRU»  (to ".MRU")
+% (c3m202acelp 2 "MRU")
+% (c3m202acel    "MRU")
+
+Em Física a aceleração de uma partícula é ``o quanto a velocidade dela
+varia com o tempo''; a posição é dada em metros, a velocidade em $m/s$
+e a aceleração em $m/s^2$ --- e a gente começa a entender aceleração
+aprendendo a visualizar e fazer as contas em dois casos:
+
+\begin{enumerate}
+
+\item Movimento uniformemente acelerado na vertical. Por exemplo:
+  ``considere uma partícula que se move na vertical em M.U.A., com
+  aceleração igual a $2 \frac{m}{s^2}$ para cima. Digamos que em
+  $t=3s$ ela está no ponto $y=4m$ e a velocidade dela é $5
+  \frac{m}{s}$ para cima''...
+
+\item Movimento uniformemente acelerado no plano. Por exemplo:
+  ``considere uma partícula que se move no plano $(x,y)$ em M.U.A.,
+  com aceleração igual a $\VEC{2,3} \frac{m}{s^2}$. Digamos que em
+  $t=4s$ a velocidade dela é $\VEC{5,6} \frac{m}{s}$''...
+
+\end{enumerate}
+
+\newpage
+
+Em cálculo 3 nós (geralmente) não vamos usar unidades de medida como
+metros e segundos. Daqui a algumas aulas nós vamos ver como
+praticamente todas as contas de Cálculo 3 podem ser ``tipadas'' neste
+sentido aqui:
+
+{\footnotesize
+
+% (c3m201derpsp 5 "tipos")
+% (c3m201derps    "tipos")
+\url{http://angg.twu.net/LATEX/2020-1-C3-derivs-parciais.pdf\#page=5}
+
+}
+
+
+\bsk
+\bsk
+
+{\bf Exercício 1}
+
+O Bortolossi fala {\sl explicitamente} do vetor aceleração em bem
+poucos lugares do livro dele, mas implicitamente em vários lugares.
+Estou gravando um vídeo sobre isso... se você já terminou os
+exercícios da aula passada faça o exercício 15 do Bortolossi, que está
+na página 217, que está no capítulo 6.
+
+% \newpage
+
+% «video»  (to ".video")
+
+% {\bf Algumas coisas do vídeo}
+
+% (find-c3m202acelvideo "3:00")
+% (find-c3m202acelvideo "3:40")
+
+
+
+\newpage
+
+% «exercicio-2»  (to ".exercicio-2")
+% (c3m202acelp 4 "exercicio-2")
+% (c3m202acel    "exercicio-2")
+
+{\bf Exercício 2}
+
+\ssk
+
+Em cada um dos casos abaixo calcule $g(x)$ e $g'(x)$ para $x=b$,
+$x=b+1$ e $x=b-1$ e use isto pra desenhar três pontos do gráfico da
+$g$ e a inclinação do gráfico da $g$ nestes três pontos, e aí use isto
+pra desenhar o gráfico da parábola $y=g(x)$ em torno de $x=b$.
+
+\msk
+
+a) $b=3$ e $g(x) = 2 + 0·(x-b) + 0·(x-b)^2$
+
+b) $b=3$ e $g(x) = 2 + 0·(x-b) + 1·(x-b)^2$
+
+c) $b=3$ e $g(x) = 2 + 0·(x-b) + -1·(x-b)^2$
+
+\ssk
+
+d) $b=4$ e $g(x) = 2 + 0·(x-b) + 0·(x-b)^2$
+
+e) $b=4$ e $g(x) = 2 + 0·(x-b) + 1·(x-b)^2$
+
+f) $b=4$ e $g(x) = 2 + 0·(x-b) + -1·(x-b)^2$
+
+\ssk
+
+g) $b=4$ e $g(x) = 1 + 0·(x-b) + 0·(x-b)^2$
+
+h) $b=4$ e $g(x) = 1 + 0·(x-b) + 1·(x-b)^2$
+
+i) $b=4$ e $g(x) = 1 + 0·(x-b) + -1·(x-b)^2$
+
+\newpage
+
+j) $b=4$ e $g(x) = 1 + 1·(x-b) + 0·(x-b)^2$
+
+k) $b=4$ e $g(x) = 1 + 1·(x-b) + 1·(x-b)^2$
+
+l) $b=4$ e $g(x) = 1 + 1·(x-b) + -1·(x-b)^2$
+
+\ssk
+
+m) $b=4$ e $g(x) = 1 + -1·(x-b) + 0·(x-b)^2$
+
+n) $b=4$ e $g(x) = 1 + -1·(x-b) + 1·(x-b)^2$
+
+o) $b=4$ e $g(x) = 1 + -1·(x-b) + -1·(x-b)^2$
+
+\ssk
+
+p) $b=4$ e $g(x) = 1 + -1·(x-b) + 0·(x-b)^2$
+
+q) $b=4$ e $g(x) = 1 + -1·(x-b) + \frac12·(x-b)^2$
+
+r) $b=4$ e $g(x) = 1 + -1·(x-b) + -\frac12·(x-b)^2$
+
+
+
+
+
+% Pra gente uma trajetória em $\R^2$ é uma função de $\R$ em $\R^2$,
+% onde esse
+
+
+% (find-bortolossi6page (+ -186 187) "6. Curvas parametrizadas, transformações lineares...")
+% (find-bortolossi6page (+ -186 188)   "traço")
+% (find-bortolossi6page (+ -186 195)   "Figura 6.6. Traço da hélice")
+% (find-bortolossi6page (+ -186 197) "6.2 O vetor tangente a uma curva parametrizada")
+% (find-bortolossi6page (+ -186 199)   "limite de vetores secantes")
+% (find-bortolossi6page (+ -186 215)   "A ciclóide")
+% (find-bortolossi6page (+ -186 217)   "O vetor aceleração")
+
+
+
+\newpage
+
+\phantom{a}
+
+\newpage
+
+\phantom{a}
+
+\newpage
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2020.2-C3/")
+# (find-fline "~/LATEX/2020-2-C3/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2020.2-C3/
+       cp -fv        $1.pdf ~/LATEX/2020-2-C3/
+       cat <<%%%
+% (find-latexscan-links "C3" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2020-2-C3-aceleracao veryclean
+make -f 2019.mk STEM=2020-2-C3-aceleracao pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3m202acel"
+% End:

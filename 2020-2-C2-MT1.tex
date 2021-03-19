@@ -1,0 +1,322 @@
+% (find-LATEX "2020-2-C2-MT1.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2020-2-C2-MT1.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2020-2-C2-MT1.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2020-2-C2-MT1.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2020-2-C2-MT1.pdf"))
+% (defun e () (interactive) (find-LATEX "2020-2-C2-MT1.tex"))
+% (defun o () (interactive) (find-LATEX "2020-2-C2-MT1.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2020-2-C2-MT1"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2020-2-C2-MT1.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2020-2-C2-MT1")
+% (find-pdf-page   "~/LATEX/2020-2-C2-MT1.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2020-2-C2-MT1.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2020-2-C2-MT1.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2020-2-C2-MT1.pdf")
+%   file:///home/edrx/LATEX/2020-2-C2-MT1.pdf
+%               file:///tmp/2020-2-C2-MT1.pdf
+%           file:///tmp/pen/2020-2-C2-MT1.pdf
+% http://angg.twu.net/LATEX/2020-2-C2-MT1.pdf
+% (find-LATEX "2019.mk")
+% (find-CN-aula-links "2020-2-C2-MT1" "2" "c2m202mt1" "c2mt1")
+%
+% Video:
+% (find-ssr-links "c2m202mt1" "2020-2-C2-MT1")
+% (code-video     "c2m202mt1video" "$S/http/angg.twu.net/eev-videos/2020-2-C2-MT1.mp4")
+% (find-c2m202mt1video "0:00")
+
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.regras»	(to "regras")
+% «.dicas»	(to "dicas")
+%
+% «.djvuize»	(to "djvuize")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx15}               % (find-LATEX "edrx15.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrxchars.tex              % (find-LATEX "edrxchars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+
+%L dofile "edrxtikz.lua"  -- (find-LATEX "edrxtikz.lua")
+%L dofile "edrxpict.lua"  -- (find-LATEX "edrxpict.lua")
+\pu
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx15.sty" "colors-2019")
+\long\def\ColorRed   #1{{\color{Red1}#1}}
+\long\def\ColorViolet#1{{\color{MagentaVioletLight}#1}}
+\long\def\ColorViolet#1{{\color{Violet!50!black}#1}}
+\long\def\ColorGreen #1{{\color{SpringDarkHard}#1}}
+\long\def\ColorGreen #1{{\color{SpringGreenDark}#1}}
+\long\def\ColorGreen #1{{\color{SpringGreen4}#1}}
+\long\def\ColorGray  #1{{\color{GrayLight}#1}}
+\long\def\ColorGray  #1{{\color{black!30!white}#1}}
+\long\def\ColorBrown #1{{\color{Brown}#1}}
+\long\def\ColorBrown #1{{\color{brown}#1}}
+\long\def\ColorOrange#1{{\color{orange}#1}}
+
+\long\def\ColorShort #1{{\color{SpringGreen4}#1}}
+\long\def\ColorLong  #1{{\color{Red1}#1}}
+
+\def\frown{\ensuremath{{=}{(}}}
+\def\True {\mathbf{V}}
+\def\False{\mathbf{F}}
+\def\D    {\displaystyle}
+
+\def\drafturl{http://angg.twu.net/LATEX/2020-2-C2.pdf}
+\def\drafturl{http://angg.twu.net/2020.2-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m202mt1p 1 "title")
+% (c2m202mt1    "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2020.2}
+
+\bsk
+
+{\bf Mini-teste 1} % \ColorGray{(só a introdução por enquanto)}
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2020.2-C2.html}
+
+\end{center}
+
+\newpage
+
+%  ____                          
+% |  _ \ ___  __ _ _ __ __ _ ___ 
+% | |_) / _ \/ _` | '__/ _` / __|
+% |  _ <  __/ (_| | | | (_| \__ \
+% |_| \_\___|\__, |_|  \__,_|___/
+%            |___/               
+%
+% «regras»  (to ".regras")
+% (c2m202mt1p 2 "regras")
+% (c2m202mt1    "regras")
+
+{\bf Regras para o mini-teste}
+
+% (c2m201mt1p 7 "miniteste-regras")
+% (c2m201mt1    "miniteste-regras")
+
+As questões do mini-teste serão disponibilizadas às 20:00 da
+sexta-feira 12/março/2020 e você deverá entregar as respostas
+\ColorRed{escritas à mão} até as 20:00 do sábado 13/nov/2020 na
+plataforma Classroom; desenhos feitos no computador serão
+\ColorRed{ignorados}.
+
+Se o Classroom der algum problema mande também para este endereço de
+e-mail:
+
+\ssk
+
+\ColorRed{eduardoochs@gmail.com}
+
+\ssk
+
+Mini-testes entregues após este horário não serão considerados.
+
+Durante as 24 horas do mini-teste nem o professor nem o monitor
+responderão perguntas sobre os assuntos do mini-teste mas você pode
+discutir com os seus colegas --- inclusive no grupo da turma.
+
+Este mini-teste vale 0.5 pontos extras na P1.
+
+
+\newpage
+
+% «dicas»  (to ".dicas")
+% (find-LATEX "material-para-GA.tex" "dicas")
+% (find-LATEX "material-para-GA.tex" "dicas" "7) Uma solução bem escrita")
+% (c2m201p1p 10 "comentario-telegram")
+% (c2m201p1     "comentario-telegram")
+
+{\bf Dicas}
+
+\ssk
+
+Leia a ``dica 7'' daqui:
+
+\ssk
+
+\url{http://angg.twu.net/LATEX/material-para-GA.pdf\#page=5}
+
+\bsk
+
+Além disso revise {\bf MUITO} bem as suas resposta!
+
+Leia esta bronca que eu dei na turma de C2 do semestre passado:
+
+\ssk
+
+\url{http://angg.twu.net/LATEX/2020-1-C2-P1.pdf\#page=10}
+
+\newpage
+
+{\bf Mini-teste}
+
+\ssk
+
+Seja $f(x)$ esta função,
+%
+$$
+ f(x) \;\; = \;\;
+ \vcenter{\hbox{%
+ \unitlength=10pt
+ \beginpicture(0,-4)(10,4)
+   \pictgrid%
+   \pictpiecewise{(0,1)--(1,1)o
+                  (1,2)c--(2,2)o
+                  (2,3)c--(3,3)o
+                  (3,-3)c--(4,-3)o
+                  (4,-2)c--(5,-2)o
+                  (5,-1)c--(6,-1)o
+                  (6,0)c--(7,0)o
+                  (7,1)c--(8,1)o
+                  (8,2)c--(9,2)o
+                  (9,3)c--(10,3)o
+                  }%
+   \pictaxes%
+ \end{picture}%
+ }}
+$$
+
+e sejam
+%
+$$\begin{array}{rcl}
+  F(b) &=& \D \Intx{0}{b}{f(x)}, \\[15pt]
+  G(b) &=& \D \Intx{2}{b}{f(x)}. \\
+  \end{array}
+$$
+
+\newpage
+
+a) Faça o gráfico da $F(b)$. Obs: $F:[0,10]→\R$.
+
+b) Faça o gráfico da $G(b)$. Obs: $G:[0,10]→\R$.
+
+c) Faça o gráfico da derivada da $F(b)$.
+
+\msk
+
+Dicas: pra calcular $G(b)$ quando $b∈[0,2)$ você vai precisar de
+
+umas idéias que a gente viu no exercício 7 dos últimos slides.
+
+No item c) indique os pontos onde a $F(b)$ não é derivável.
+
+
+
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2020.2-C2/")
+# (find-fline "~/LATEX/2020-2-C2/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2020.2-C2/
+       cp -fv        $1.pdf ~/LATEX/2020-2-C2/
+       cat <<%%%
+% (find-latexscan-links "C2" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2020-2-C2-MT1 veryclean
+make -f 2019.mk STEM=2020-2-C2-MT1 pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2m202mt1"
+% End:
