@@ -3,11 +3,11 @@
 #   http://angg.twu.net/2020-2-C2-C3/README.org
 #           (find-angg "2020-2-C2-C3/README.org")
 # Author: Eduardo Ochs <eduardoochs@gmail.com>
-#
+# 
 # Based on: (find-angg "edrxrepl/README.org")
-#
+# 
 # (defun e () (interactive) (find-angg "2020-2-C2-C3/README.org"))
-#
+# 
 # Some eev-isms:
 # (defun c () (interactive) (eek "C-c C-e h h"))
 # (defun v () (interactive) (brg     "~/2020-2-C2-C3/README.html"))
@@ -71,6 +71,7 @@ git branch -M main
 git remote add origin https://github.com/edrx/2020-2-C2-C3.git
 git push -u origin main
 
+git add README.org
 git commit -m "Small changes."
 git push -u origin main
 
