@@ -28,6 +28,9 @@
 
 % «.defs»	(to "defs")
 % «.title»	(to "title")
+% «.regras»	(to "regras")
+% «.dicas»	(to "dicas")
+% «.gabarito»	(to "gabarito")
 %
 % «.djvuize»	(to "djvuize")
 
@@ -131,6 +134,155 @@ Eduardo Ochs - RCN/PURO/UFF
 
 \newpage
 
+%  ____                          
+% |  _ \ ___  __ _ _ __ __ _ ___ 
+% | |_) / _ \/ _` | '__/ _` / __|
+% |  _ <  __/ (_| | | | (_| \__ \
+% |_| \_\___|\__, |_|  \__,_|___/
+%            |___/               
+%
+% «regras»  (to ".regras")
+% (c2m202mt1p 2 "regras")
+% (c2m202mt1    "regras")
+
+{\bf Regras para o mini-teste}
+
+% (c2m201mt1p 7 "miniteste-regras")
+% (c2m201mt1    "miniteste-regras")
+
+As questões do mini-teste serão disponibilizadas às 20:30 da
+sexta-feira 19/março/2021 e você deverá entregar as respostas
+\ColorRed{escritas à mão} até as 20:30 do sábado 20/março/2021 na
+plataforma Classroom; desenhos feitos no computador serão
+\ColorRed{ignorados}.
+
+Se o Classroom der algum problema mande também para este endereço de
+e-mail:
+
+\ssk
+
+\ColorRed{eduardoochs@gmail.com}
+
+\ssk
+
+Mini-testes entregues após este horário não serão considerados.
+
+% Durante as 24 horas do mini-teste nem o professor nem o monitor
+% responderão perguntas sobre os assuntos do mini-teste mas você pode
+% discutir com os seus colegas --- inclusive no grupo da turma.
+
+Durante as 24 horas do mini-teste o professor não responderá perguntas
+sobre os assuntos do mini-teste mas você pode discutir com os seus
+colegas --- inclusive no grupo da turma.
+
+Este mini-teste vale 0.5 pontos extras na P1.
+
+
+\newpage
+
+% «dicas»  (to ".dicas")
+% (find-LATEX "material-para-GA.tex" "dicas")
+% (find-LATEX "material-para-GA.tex" "dicas" "7) Uma solução bem escrita")
+% (c2m201p1p 10 "comentario-telegram")
+% (c2m201p1     "comentario-telegram")
+
+{\bf Dicas}
+
+\ssk
+
+Leia a ``dica 7'' daqui:
+
+\ssk
+
+\url{http://angg.twu.net/LATEX/material-para-GA.pdf\#page=5}
+
+\bsk
+
+Além disso revise {\bf MUITO} bem as suas resposta!
+
+Leia esta bronca que eu dei na turma de C2 do semestre passado:
+
+\ssk
+
+\url{http://angg.twu.net/LATEX/2020-1-C2-P1.pdf\#page=10}
+
+\newpage
+
+A figura da próxima página for roubada/adaptada do ``Calculus - 11th
+ed.'', do Thomas/Weir/Hass/Giordano... repare que eu escrevi algumas
+coisas nela em vermelho à mão.
+
+Seja
+%
+$$S = \setofxyzst{z = f(x,y)}.$$
+
+Repare que não temos uma fórmula para $f$, só um desenho que nos diz
+{\sl aproximadamente} o comportamento da função $f:A \to \R^2$, onde:
+%
+% (find-latexscan-links "C3" "20210319_A")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210319_A.pdf")
+$$\includegraphics[height=3cm]{2020-2-C3/20210319_A.pdf}$$
+
+\newpage
+
+% (c3m202rcadeia1p 27 "figura-thomas")
+% (c3m202rcadeia1     "figura-thomas")
+% (find-latexscan-links "C3" "2021mar19_thomas_2")
+% (find-xpdf-page "~/LATEX/2020-2-C3/2021mar19_thomas_2.pdf")
+\includegraphics[height=8cm]{2020-2-C3/2021mar19_thomas_2.pdf}
+
+
+
+\newpage
+
+Copie a figura à mão para uma folha de papel -- sugestão: desenhe ela
+bem grande -- e represente sobre ela os conjuntos:
+
+\msk
+
+a) $S ∩ \setofxyzst{x=1}$,
+
+b) $S ∩ \setofxyzst{x=3}$,
+
+c) $S ∩ \setofxyzst{x=4}$,
+
+d) $S ∩ \setofxyzst{y=2}$,
+
+e) $S ∩ \setofxyzst{z=1}$.
+
+
+\msk
+
+Faça vários desenhos separados se preferir.
+
+\bsk
+
+Lembre que você {\sl pode} e {\sl deve} tratar este mini-teste como um
+trabalho de grupo. Você vai precisar de um monte de truques pra
+conseguir desenhar os itens acima realmente bem e é difícil descobrir
+todos eles sozinho.
+
+
+\newpage
+
+% «gabarito»  (to ".gabarito")
+% (c3m202mt1p 7 "gabarito")
+% (c3m202mt1    "gabarito")
+
+{\bf Gabarito}
+
+% (find-latexscan-links "C3" "2021mar24_tomas_gab_1")
+% (find-xpdf-page "~/LATEX/2020-2-C3/2021mar24_tomas_gab_1.pdf")
+\includegraphics[height=7cm]{2020-2-C3/2021mar24_tomas_gab_1.pdf}
+
+
+
+
+
+% (c2m202mt1p 2 "regras")
+% (c2m202mt1    "regras")
+
+
 % (c2m202mt1p 1 "title")
 % (c2m202mt1    "title")
 
@@ -158,6 +310,18 @@ Eduardo Ochs - RCN/PURO/UFF
 # (find-fline "~/bin/djvuize")
 
 cd /tmp/
+cp -iv 2021mar19_thomas_2.png ~/LATEX/2020-2-C3/
+cd ~/LATEX/2020-2-C3/
+convert 2021mar19_thomas_2.png 2021mar19_thomas_2.pdf
+f 2021mar19_thomas_2
+% (find-latexscan-links "C3" "2021mar19_thomas_2")
+
+convert 2021mar24_tomas_gab_1.png 2021mar24_tomas_gab_1.pdf
+% (find-latexscan-links "C3"     "2021mar24_tomas_gab_1")
+
+
+
+cd /tmp/
 for i in *.jpg; do echo f $(basename $i .jpg); done
 
 f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
@@ -171,9 +335,7 @@ f () { cp -fv $1.png $1.pdf       ~/2020.2-C3/
 %%%
 }
 
-f 20201213_area_em_funcao_de_theta
-f 20201213_area_em_funcao_de_x
-f 20201213_area_fatias_pizza
+f 20210319_A
 
 
 

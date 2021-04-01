@@ -444,6 +444,13 @@ TCGQ = Class {
         for y=1,tq.r do tq:Rput(y, "\\_"..y) end
         return tq
       end,
+    LRputs = function (tq, left, right)
+        left  = left:gsub("!", "\\")
+	right = right:gsub("!", "\\")
+	for y,str in ipairs(split(left))  do tq:Lput(y, str) end
+	for y,str in ipairs(split(right)) do tq:Rput(y, str) end
+	return tq
+      end,
     --
     -- Low-level functions to put "?"s and "!"s in qmark cells
     QLputs = function (tq, qmarks)

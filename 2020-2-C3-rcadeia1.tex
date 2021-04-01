@@ -33,11 +33,21 @@
 % (find-ssr-links "c3m202rcadeia1c" "2020-2-C3-rcadeia1-c")
 % (find-ssr-links "c3m202rcadeia1d" "2020-2-C3-rcadeia1-d")
 
+% 2021mar26
+% (find-ssr-links "c3m202rcadeia1e" "2020-2-C3-rcadeia1-e")
+% (code-eevvideo "c3m202rcadeia1e" "2020-2-C3-rcadeia1-e")
+% (code-video "c3m202rcadeia1evideo" "$S/http/angg.twu.net/eev-videos/2020-2-C3-rcadeia1-e.mp4")
+% (find-c3m202rcadeia1evideo "0:00")
+% (find-c3m202rcadeia1evideo "6:50" "Delta x")
+% (find-c3m202rcadeia1evideo "11:35" "é o meu ponto (x_0,y_0)")
+
 % «.defs»		(to "defs")
 % «.title»		(to "title")
 % «.exercicio-1»	(to "exercicio-1")
 % «.exercicio-1-dica»	(to "exercicio-1-dica")
 % «.exercicio-2»	(to "exercicio-2")
+% «.tipos»		(to "tipos")
+% «.exercicio-3»	(to "exercicio-3")
 % «.semi-esfera»	(to "semi-esfera")
 % «.exercicio-4»	(to "exercicio-4")
 % «.exercicio-5»	(to "exercicio-5")
@@ -46,6 +56,13 @@
 % «.exercicio-8»	(to "exercicio-8")
 % «.exercicio-9»	(to "exercicio-9")
 % «.exercicio-9-dicas»	(to "exercicio-9-dicas")
+% «.dicas-sobre-as-dicas»	(to "dicas-sobre-as-dicas")
+% «.thomas-intro»	(to "thomas-intro")
+% «.figura-thomas»	(to "figura-thomas")
+% «.exercicio-10»	(to "exercicio-10")
+% «.tipos-de-novo»	(to "tipos-de-novo")
+% «.exercicio-14»	(to "exercicio-14")
+% «.exercicio-15»	(to "exercicio-15")
 %
 % «.djvuize»	(to "djvuize")
 
@@ -363,6 +380,10 @@ do Bortolossi (no capítulo 5).
 
 \newpage
 
+% «tipos»  (to ".tipos")
+% (c3m202rcadeia1p 8 "tipos")
+% (c3m202rcadeia1    "tipos")
+
 {\bf Tipos}
 
 \ssk
@@ -397,6 +418,8 @@ $$
 então $z=F(g(t),h(t))$, $z_x = F_x(g(t),h(t))$, etc.
 
 \newpage
+
+% «exercicio-3»  (to ".exercicio-3")
 
 {\bf Exercício 3.}
 
@@ -673,6 +696,10 @@ Dica 2:
 
 \newpage
 
+% «dicas-sobre-as-dicas»  (to ".dicas-sobre-as-dicas")
+% (c3m202rcadeia1p 20 "dicas-sobre-as-dicas")
+% (c3m202rcadeia1     "dicas-sobre-as-dicas")
+
 {\bf Dicas sobre as dicas (adaptadas da discussão no Telegram)}
 
 Reparem que a gente só sabe o valor de $F(x,y)$ nesses 20 pontos e a
@@ -751,6 +778,34 @@ que todo mundo ache que é uma aproximação razoável.
 
 Ficou mais claro?
 
+
+\newpage
+
+Reparem, o Cirillo já estava comecando a fazer curvas de nível do
+jeito dele aqui... e eu comentei que o método que eu usei pra fazer as
+minhas foi um pouco diferente...
+
+O meu objetivo era que todo mundo discutisse --- Mas acho que eu fiz
+algumas pessoas desanimarem com uns comentários que eu fiz
+
+
+
+\bsk
+
+Voces acham que entre os dois pontos em que $F(x,y)=6$ tem um segmento
+de reta em que $F(x,y)$ é constante $= 6$? Ou não?
+
+{\sl (Umas pessoas acharam que sim, outras que não)}
+
+A figra da dica 2 é sobre isso... aqui a gente vai ter que DECIDIR o que faz.
+Tentem fazer dos dois jeitos! Se vocês usarem a opção de cima na ``dica
+2'' do slide 19 vocês vão ter um segmento de reta em que $z = 6$ no
+segmento todo, e se vocês usarem a opção de baixo os dois `6's vão
+virar picos separados...
+
+
+
+
 % Posso gravar se eu entender melhor as duvidas de voces
 
 % Professor, não to entendendo nada
@@ -790,6 +845,8 @@ Ficou mais claro?
 % partindo de um valor já conhecido
 % e aproximando
 % 
+
+
 % Voces acham que entre os dois pontos em que F(x,y)=6 tem um segmento
 % de reta em que F(x,y) e' constante = 6? ou nao?
 % 
@@ -811,6 +868,8 @@ Ficou mais claro?
 % 2" do slide 19 voces vai ter um segmento de reta em que z = 6 no
 % segmento todo, e se voces usarem a opcao de baixo os dois "6"s vao
 % virar p icos separados...
+
+
 % 
 % prof a figura seria como uma plano cheio de picos com a altura igual a z ?
 % Acho que ela vai ter no maximo 4 picos
@@ -839,6 +898,70 @@ Ficou mais claro?
 
 \newpage
 
+% «thomas-intro»  (to ".thomas-intro")
+% (c3m202rcadeia1p 25 "thomas-intro")
+% (c3m202rcadeia1     "thomas-intro")
+
+{\bf Uma figura do livro do Thomas}
+
+Nos próximos exercícios vocês vão tentar refazer vocês mesmos a figura
+do slide 27, que eu roubei do livro ``Calculus - 11th ed.'', do
+Thomas/Weir/Hass/Giordano...
+
+...mas vocês vão usar esta função aqui:
+
+$$\begin{array}{rcl}
+  G(x,y) &=& 25 - x^2 - y^2 \\ 
+  F(x,y) &=& \begin{cases}
+             G(x,y)/5 & \text{quando $G(x,y)≥0$}, \\
+             0        & \text{quando $G(x,y)<0$} \\
+             \end{cases} \\
+  \end{array}
+$$
+
+...e esta superfícies:
+
+$$\begin{array}{rcl}
+   S &=& \setofxyzst{z = F(x,y)} \\
+  S' &=& \setofxyzst{x≥0, \; y≥0, \; z = F(x,y)} \\
+  \end{array}
+$$
+
+
+\newpage
+
+O diagrama de numerozinhos dela é:
+
+\begin{verbatim}
+  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+  0.0 0.0 0.0 1.0 1.6 1.8 1.6 1.0 0.0 0.0 0.0
+  0.0 0.0 1.4 2.4 3.0 3.2 3.0 2.4 1.4 0.0 0.0
+  0.0 1.0 2.4 3.4 4.0 4.2 4.0 3.4 2.4 1.0 0.0
+  0.0 1.6 3.0 4.0 4.6 4.8 4.6 4.0 3.0 1.6 0.0
+  0.0 1.8 3.2 4.2 4.8 5.0 4.8 4.2 3.2 1.8 0.0
+  0.0 1.6 3.0 4.0 4.6 4.8 4.6 4.0 3.0 1.6 0.0
+  0.0 1.0 2.4 3.4 4.0 4.2 4.0 3.4 2.4 1.0 0.0
+  0.0 0.0 1.4 2.4 3.0 3.2 3.0 2.4 1.4 0.0 0.0
+  0.0 0.0 0.0 1.0 1.6 1.8 1.6 1.0 0.0 0.0 0.0
+  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+\end{verbatim}
+
+% G = function (x,y) return 25 - (x*x + y*y) end
+% F = function (x,y) if G(x,y) >= 0 then return G(x,y)/5 else return 0 end end
+% for y=6,-6,-1 do
+%   for x=6,-6,-1 do
+%     printf("%4.1f", F(x,y))
+%   end
+%   print()
+% end
+
+
+\newpage
+
+
+% «figura-thomas»  (to ".figura-thomas")
+% (c3m202rcadeia1p 27 "figura-thomas")
+% (c3m202rcadeia1     "figura-thomas")
 
 % (find-latexscan-links "C3" "2021mar18_thomas_11-1_fig_14.15")
 % (find-xpdf-page "~/LATEX/2020-2-C3/2021mar18_thomas_11-1_fig_14.15.pdf")
@@ -848,6 +971,203 @@ Ficou mais claro?
 % (find-books "__analysis/__analysis.el" "thomas" "Figure 14.5")
 
 
+\newpage
+
+% «exercicio-10»  (to ".exercicio-10")
+% (c3m202rcadeia1p 28 "exercicio-10")
+% (c3m202rcadeia1     "exercicio-10")
+
+{\bf Exercício 10.}
+
+Aqui vamos usar estas {\sl definições}:
+
+$x_1 = x_0 + Δx$,
+
+$y_1 = y_0 + Δy$,
+
+$z_0 = F(x_0,y_0)$,
+
+$z_1 = F(x_1,y_1)$,
+
+$Δz = z_1 - z_0$,
+
+mas em cada item os valores de $x_0, y_0, Δx, Δy$ vão ser diferentes.
+
+\msk
+
+a) Sejam $x_0=1, y_0=2, Δx=\ColorOrange{-1}, Δy=1$.
+
+{\sl Visualize} as seguintes coisas:
+
+$(x_0,y_0,0)$, $(x_1,y_0,z_0)$, $(x_0,y_1,0)$, $(x_1,y_1,0)$, 
+
+$(x_0,y_0,z_0)$, $(x_1,y_1,z_1)$, $(x_0,y_1,z_0)$, $(x_1,y_0,z_0)$, $(x_1,y_1,z_0)$, 
+
+$(x_0,y_0,z_0) + \VEC{Δx,Δy,Δz}$,
+
+$(x_0,y_0,z_0) + \VEC{Δx,0,\frac{∂z}{∂x}Δx}$,
+$(x_0,y_0,z_0) + \VEC{0,Δy,\frac{∂z}{∂y}Δy}$.
+
+
+\newpage
+
+Dica: algumas pessoas vão querer fazer desenhos em perspectiva, e
+outras vão querer calcular tudo numericamente... tudo isso é opcional.
+Se você conseguir visualizar todos esses objetos só olhando pro
+diagrama de numerozinhos e visualizando a que distância da tela cada
+um deles está já tá bom.
+
+\msk
+
+{\bf Exercício 10 (cont.)}
+
+Visualize as seguintes retas parametrizadas:
+
+b) $\setofst{ (x_0,y_0,z_0) + t\VEC{Δx,0,\frac{∂z}{∂x}Δx} }{t∈\R}$,
+
+c) $\setofst{ (x_0,y_0,z_0) + t\VEC{0,Δy,\frac{∂z}{∂y}Δy} }{t∈\R}$,
+
+d) $\setofst{ (x_0,y_0,z_0) + t\VEC{Δx,Δy,\frac{∂z}{∂x}Δx + \frac{∂z}{∂y}Δy} }{t∈\R}$,
+
+e) $\setofst{ (x_0,y_0,z_0) + t\VEC{Δx,Δy,Δz} }{t∈\R}$,
+
+\newpage
+
+{\bf Exercício 10 (cont.)}
+
+Visualize as seguinte curvas parametrizadas:
+
+
+f) $\setofst{ (x_0, y_0+t, F(x_0,y_0+t)) }{ t∈\R }$,
+
+g) $\setofst{ (x_0, y_0+t, F(x_0,y_0+t)) }{ t∈\R }$,
+
+h) $\setofst{ (x_0+tΔx, y_0+tΔy, F(x_0+tΔx, y_0+tΔy)) }{ t∈\R }$
+
+i) $\setofst{ (x_0+tΔx, y_0, F(x_0+tΔx,y_0)) }{ t∈\R }$,
+
+j) $\setofst{ (x_0, y_0+tΔy, F(x_0,y_0+tΔy)) }{ t∈\R }$,
+
+
+\bsk
+
+
+{\bf Exercício 11}
+
+Refaça tudo que você fez no 10, mas mudando o $Δx$ para 0.5.
+
+\bsk
+
+{\bf Exercício 12}
+
+Refaça tudo que você fez no 10 e no 11, mas agora com
+
+$Δx=0.5$ e $Δy=0.5$.
+
+
+\newpage
+
+% «tipos-de-novo»  (to ".tipos-de-novo")
+% (c3m202rcadeia1p 32 "tipos-de-novo")
+% (c3m202rcadeia1     "tipos-de-novo")
+% (c3m201derpsp 5 "tipos")
+% (c3m201derps    "tipos")
+
+{\bf Tipos (de novo)}
+
+(Adaptado às pressas de slides do semestre passado)
+
+\msk
+
+Dica: {\bf TUDO} que nós estamos fazendo agora pode ser {\sl
+  visualizado} e {\sl tipado}. Você já viu um pouco de tipos em {\tt
+  C} e em Física; em Física os ``tipos'' são parcialmente determinados
+pelas unidades --- metros são distância, segundos são tempo,
+metros/segundo é uma unidade de velocidade, e assim por diante...
+
+Aqui a gente pode pensar que $x_0$ e $x_1$ são posições no eixo
+horizontal, $y_0$ e $y_1$ são posições no eixo vertical, $Δx$ é uma
+distância na horizontal, $Δy$ é uma distância na vertical,
+$\frac{Δy}{Δx}$ é uma {\sl inclinação} (qual? Do quê?), e assim por
+diante.
+
+\newpage
+
+{\bf Exercício 13}
+
+Veja se você consegue ``tipar'' (no sentido acima) cada subexpressão
+de cada uma das contas que você fez no Exercício 2. Dica: use chaves
+sob as subexpressões deste modo aqui,
+
+\def\rq{\ColorRed{?}}
+\def\undq#1{\underbrace{#1}_{\rq}}
+
+$$\undq{
+  \undq{(\undq{F(\undq{\undq{\undq{x_0} + \undq{Δx}},\undq{y_0}})}
+        - \undq{F(\undq{\undq{x_0},\undq{y_0}})})} / \undq{Δx}
+  }
+$$
+
+e escreva os seus tipos nos lugares em que eu pus as `$\rq$'s. Use
+Português onde quiser e improvise o quanto precisar.
+
+
+\newpage
+
+{\bf Depois do mini-teste}
+
+Na sexta, 19/março/2021, vocês fizeram um mini-teste que pedia pra
+vocês desenharem cortes numa figura parecida com a do slide 27...
+link:
+
+\ssk
+
+\url{http://angg.twu.net/LATEX/2020-2-C3-MT1.pdf}
+
+\ssk
+
+Agora vocês vão fazer algo bem parecido mas usando a superfície $S'$
+do slide 25.
+
+\newpage
+
+% «exercicio-14»  (to ".exercicio-14")
+
+{\bf Exercício 14.}
+
+Desenhe a superfície $S'$ no mesmo ângulo da figura do Thomas
+
+do slide
+27 e desenhe sobre ela:
+
+a) $S' ∩ \setofxyzst{z=2}$
+
+b) $S' ∩ \setofxyzst{z=3}$
+
+c) $S' ∩ \setofxyzst{z=4}$
+
+d) $S' ∩ \setofxyzst{x=1}$
+
+e) $S' ∩ \setofxyzst{x=2}$
+
+f) $S' ∩ \setofxyzst{x=3}$
+
+
+\bsk
+
+% «exercicio-15»  (to ".exercicio-15")
+% (c3m202rcadeia1p 34 "exercicio-15")
+% (c3m202rcadeia1     "exercicio-15")
+
+{\bf Exercício 15.}
+
+Faça outras cópias do seu desenho da $S'$ e represente nessas cópias
+\ColorRed{\bf \underline{TODOS}} os pontos, retas, curvas e vetores
+que você obteve no exercício 10 --- \ColorRed{mas agora use $Δx=-1$}.
+Aqui o nosso objetivo é aprender a visualizar em 3D todas essas
+construções.
+
+\newpage
 
 \phantom{a}
 

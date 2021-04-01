@@ -26,10 +26,23 @@
 % (code-video     "c2m202isvideo" "$S/http/angg.twu.net/eev-videos/2020-2-C2-int-subst.mp4")
 % (find-c2m202isvideo "0:00")
 
-% «.defs»	(to "defs")
-% «.title»	(to "title")
+% «.defs»			(to "defs")
+% «.subst-defs»			(to "subst-defs")
+% «.title»			(to "title")
+% «.exercicio-1»		(to "exercicio-1")
+% «.dicas-subst»		(to "dicas-subst")
+% «.dicas-subst-2»		(to "dicas-subst-2")
+% «.exemplo-gamb»		(to "exemplo-gamb")
+% «.gamb-livros»		(to "gamb-livros")
+% «.exercicio-2»		(to "exercicio-2")
+% «.exemplo-1»			(to "exemplo-1")
+% «.exemplo-1-verif»		(to "exemplo-1-verif")
+% «.anotacoes-a-direita»	(to "anotacoes-a-direita")
+% «.exemplo-2»			(to "exemplo-2")
+% «.exercicio-3»		(to "exercicio-3")
+% «.subst-trig-exemplo»		(to "subst-trig-exemplo")
 %
-% «.djvuize»	(to "djvuize")
+% «.djvuize»			(to "djvuize")
 
 \documentclass[oneside,12pt]{article}
 \usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
@@ -97,6 +110,145 @@
 \def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
 
 
+% «subst-defs»  (to ".subst-defs")
+% (find-LATEX "2020-1-C2-TFC2-2.tex" "subst-defs")
+
+\def\pfo#1{\ensuremath{\mathsf{[#1]}}}
+\def\veq{\rotatebox{90}{$=$}}
+\def\Rd{\ColorRed}
+\def\D{\displaystyle}
+
+% Difference with mathstrut
+\def\Difms #1#2#3{\left. \mathstrut #3 \right|_{s=#1}^{s=#2}}
+\def\Difmu #1#2#3{\left. \mathstrut #3 \right|_{u=#1}^{u=#2}}
+\def\Difmx #1#2#3{\left. \mathstrut #3 \right|_{x=#1}^{x=#2}}
+\def\Difmth#1#2#3{\left. \mathstrut #3 \right|_{θ=#1}^{θ=#2}}
+
+\def\iequationbox#1#2{
+    \left(
+    \begin{array}{rcl}
+    \D{ #1 } &=& \D{ #2 } \\
+    \end{array}
+    \right)
+  }
+\def\isubstbox#1#2#3#4#5{{
+    \def\veq{\rotatebox{90}{$=$}}
+    \def\ph{\phantom}
+    \left(
+    \begin{array}{rcl}
+    \D{ #1 } &=& \D{ #2 } \\
+    {\veq#3} \\
+    \D{ #4 } &=& \D{ #5 } \\
+    \end{array}
+    \right)
+  }}
+\def\isubstboxT#1#2#3#4#5#6{{
+    \def\veq{\rotatebox{90}{$=$}}
+    \def\ph{\phantom}
+    \left(
+    \begin{array}{rcl}
+    \multicolumn{3}{l}{\text{#6}} \\%[5pt]
+    \D{ #1 } &=& \D{ #2 } \\
+    {\veq#3} \\
+    \D{ #4 } &=& \D{ #5 } \\
+    \end{array}
+    \right)
+  }}
+\def\isubstboxTT#1#2#3#4#5#6#7{{
+    \def\veq{\rotatebox{90}{$=$}}
+    \def\ph{\phantom}
+    \left(
+    \begin{array}{rcl}
+    \multicolumn{3}{l}{\text{#6}} \\%[5pt]
+    \D{ #1 } &=& \D{ #2 } \\
+    {\veq#3} \\
+    \D{ #4 } &=& \D{ #5 } \\
+    \multicolumn{3}{l}{\text{#7}} \\%[5pt]
+    \end{array}
+    \right)
+  }}
+
+% Definição das fórmulas para integração por substituição.
+% Algumas são pmatrizes 3x3 usando isubstbox.
+
+\def\TFCtwo{
+  \iequationbox {\Intx{a}{b}{F'(x)}}
+                {\Difmx{a}{b}{F(x)}}
+}
+\def\TFCtwoI{
+  \iequationbox {\intx{F'(x)}}
+                {F(x)}
+}
+
+\def\Sone{
+  \isubstbox
+    {\Difmx{a}{b}{f(g(x))}}  {\Intx{a}{b}{f'(g(x))g'(x)}}
+    {\ph{mmm}}
+    {\Difmu{g(a)}{g(b)}{f(u)}} {\Intu{g(a)}{g(b)}{f'(u)}}
+}
+\def\SoneI{
+  \isubstbox
+    {f(g(x))} {\intx{f'(g(x))g'(x)}}
+    {\ph{m}}
+    {f(u)}    {\intu{f'(u)}}
+}
+
+\def\Stwo{
+  \isubstboxT
+    {\Difmx{a}{b}{F(g(x))}}   {\Intx{a}{b}{f(g(x))g'(x)}}
+    {\ph{mmm}}
+    {\Difmu{g(a)}{g(b)}{F(u)}}  {\Intu{g(a)}{g(b)}{f(u)}}
+    {Se $F'(u)=f(u)$ então:}
+}
+\def\StwoI{
+  \isubstboxT
+    {F(g(x))}  {\intx{f(g(x))g'(x)}}
+    {\ph{m}}
+    {F(u)}     {\intu{f(u)}}
+    {Se $F'(u)=f(u)$ então:}
+}
+\def\StwoI{
+  \isubstboxTT
+    {F(g(x))}  {\intx{f(g(x))g'(x)}}
+    {\ph{m}}
+    {F(u)}     {\intu{f(u)}}
+    {Se $F'(u)=f(u)$ então:}
+    {Obs: $u=g(x)$.}
+}
+
+\def\Sthree{
+  \iequationbox {\Intx{a}{b}{f(g(x))g'(x)}}
+                {\Intu{g(a)}{g(b)}{f(u)}}
+}
+\def\SthreeI{
+  \iequationbox {\intx{f(g(x))g'(x)}}
+                {\intu{f(u)}
+                 \qquad [u=g(x)]
+                }
+  % [u=g(x)]
+}
+
+\def\Sthree{
+  \pmat{
+    \D \Intx{a}{b}{f(g(x))g'(x)} \\
+    \veq \\
+    \D \Intu{g(a)}{g(b)}{f(u)}
+  }}
+
+\def\SthreeI{
+  \pmat{
+    \D \intx{f(g(x))g'(x)} \\
+       \veq \\
+    \D \intu{f(u)} \\
+    \text{Obs: $u=g(x)$.} \\
+  }}
+
+
+
+\def\Subst#1{\bmat{#1}}
+
+
+
 
 %  _____ _ _   _                               
 % |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
@@ -130,6 +282,650 @@ Eduardo Ochs - RCN/PURO/UFF
 \end{center}
 
 \newpage
+
+Nos slides anteriores nós vimos como demonstrar a fórmula \pfo{S2}, e
+{\sl começamos} a ver como usá-la na prática... na verdade a gente
+costuma usar uma versão da \pfo{S2} para integrais {\sl indefinidas},
+em que a gente primeiro faz as contas de uma forma abreviada, omitindo
+todos os limites de integração e depois a gente recoloca eles.
+
+A nossa versão para integrais indefinidas da \pfo{S2} vai ser a
+\pfo{S2I} do próximo slide. Repare na linha
+%
+$$\text{``\Rd{Obs: $u=g(x)$}''}$$
+%
+no final da \pfo{S2I} --- ela vai ser importante pra evitar
+ambiguidades.
+
+\msk
+
+No slide seguinte eu pus a nossa versão para integrais indefinidas da
+\pfo{S3}, que eu chamei de \pfo{S3I}.
+
+\newpage
+
+$\begin{array}{rcc}
+ \pfo{S2} &=& \Stwo \\
+ \\
+ \pfo{S2I} &=& \StwoI \\
+ \end{array}
+$
+
+\newpage
+
+$\begin{array}{rcc}
+ \pfo{S3}  &=& \Sthree \\
+ \\
+ \pfo{S3I} &=& \SthreeI \\
+ \end{array}
+$
+
+
+\newpage
+
+% «exercicio-1»  (to ".exercicio-1")
+% (c2m202isp 5 "exercicio-1")
+% (c2m202is    "exercicio-1")
+
+{\bf Exercício 1.}
+
+Calcule os resultados das substituições abaixo:
+
+\msk
+
+a) $\pfo{S2I} \, [g(x):=3x+4]$
+
+b) $\pfo{S2I} \, [g(x):=3x+4] \, [f(u) := \frac23 \cos u]$
+
+c) $\pfo{S3I} \, [g(x):=3x+4]$
+
+d) $\pfo{S3I} \, [g(x):=3x+4] \, [f(u) := \frac23 \cos u]$
+
+\newpage
+
+% «dicas-subst»  (to ".dicas-subst")
+% (c2m202isp 6 "dicas-subst")
+% (c2m202is    "dicas-subst")
+
+{\bf Mais dicas sobre a operação `$[:=]$'}
+
+\ssk
+
+Nas duas substituições abaixo a primeira está certa
+
+e a segunda está errada:
+%
+$$\begin{array}{rll}
+  (x + 2 = 5) \, [x:=4] &=& (4 + 2 = 5) \\
+  (x + 2 = 5) \, [x:=4] &=& (6 = 5) \\
+  \end{array}
+$$
+
+O `$=$' depois de uma substituição tem um significado especial: a
+pronúncia dele é ``o resultado da substituição à esquerda é a
+expressão à direita'', e na segunda linha a gente fez mais coisas além
+de só substituir todos os `$x$'s por `4's.
+
+Note que isto aqui está certo:
+%
+$$\begin{array}{rll}
+  (x + 2 = 5) \, [x:=4] &=& (4 + 2 = 5) \\
+                        &=& (6 = 5) \\
+  \end{array}
+$$
+
+
+
+\newpage
+
+% «dicas-subst-2»  (to ".dicas-subst-2")
+% (c2m202isp 7 "dicas-subst-2")
+% (c2m202is    "dicas-subst-2")
+
+{\bf Mais dicas sobre a operação `$[:=]$' (2)}
+
+Aqui a primeira está certa e a segunda está errada...
+
+Na segunda um `$u$' foi substituido por `$e^{2x}$'!!!!!!!! $\;\;\;=\!($
+%
+$$\scalebox{0.9}{$
+  \begin{array}{rcl}
+  \SthreeI [g(x):=e^{2x}] & = &
+     \pmat{ \D \intx{f(2^{2x})(2e^{2x})} \\
+            \veq \\
+            \D \intu{f(u)} \\
+            \text{Obs: $u=e^{2x}$.} \\
+          }
+  \\
+  \\
+  \SthreeI [g(x):=e^{2x}] & = &
+     \pmat{ \D \intx{f(2^{2x})(2e^{2x})} \\
+            \veq \\
+            \D \intu{f(\ColorRed{e^{2x}})} \\
+            \text{Obs: $u=e^{2x}$.} \\
+          }
+  \end{array}
+  $}
+$$
+
+
+
+\newpage
+
+{\bf Mais dicas sobre a operação `$[:=]$' (3)}
+
+No primeiro PDF do curso nós usamos a operação `$[:=]$' para testar
+EDOs como $f'(x)=x^4$ em vários ``valores'' de $f$, pra tentar
+resolver EDOs por chutar-e-testar... Em
+%
+$$(f'(x)=x^4)\, [f(x):=x^2] = (2x = x^4)$$
+%
+na expressão original, $(f'(x)=x^4)$, o símbolo $f$ faz o papel de uma
+função qualquer, ou de uma variável cujo valor é uma função; a
+substiuição ``$[f(x):=x^2]$'' diz como substituir a $f$ original,
+genérica, pela $f$ que tem esta {\sl definição} aqui: $f(x)=x^2$... e
+nós já temos bastante prática com obter consequencias de uma definição
+como $f(x)=x^2$. Por exemplo:
+%
+$$\begin{array}{rclcrcl}
+  f(200)  &=& 200^2            && f'(x) &=& 2x \\
+  f(3u+4) &=& (3u+4)^2         && f'(3u+4) &=& 2(3u+4) \\
+  f(42x^3+99) &=& (42x^3+99)^2 && f'(42x^3+99) &=& 2(42x^3+99) \\
+  \end{array}
+$$
+
+
+\newpage
+
+% «exemplo-gamb»  (to ".exemplo-gamb")
+% (c2m202isp 8 "exemplo-gamb")
+% (c2m202is    "exemplo-gamb")
+
+{\bf Exemplo com gambiarras}
+
+Isto aqui é um exemplo de como contas com integração
+
+por substituição costumam ser feitas na prática:
+%
+$$\begin{array}{l}
+  \D \intx{2 \cos(3x+4)} \\[8pt]
+  = \;\; \D \intu {2 (\cos u) · \frac13} \\[8pt]
+  = \;\; \D \frac23 \intu{\cos u} \\[8pt]
+  = \;\; \D \frac23 \sen u \\[8pt]
+  = \;\; \D \frac23 \sen (3x+4) \\
+  \end{array}
+$$
+
+A ``Obs: $u=3x+4$'' costuma ser posta no texto em português
+
+antes ou depois das contas, ou omitida (!!!)...
+
+\newpage
+
+% «gamb-livros»  (to ".gamb-livros")
+% (c2m202isp 10 "gamb-livros")
+% (c2m202is     "gamb-livros")
+
+{\bf A gambiarra nos livros}
+
+Dê uma olhada na página 165 do Martins/Martins.
+
+Eles pulam {\bf MUITOS} passos, e dizem
+%
+$$\text{Fazendo $u=g(x)$, $du=g'(x)\,dx$, e substituindo em (A)...}$$
+
+\def\und#1#2{\underbrace{#1}_{#2}}
+
+A idéia é esta aqui:
+%
+$$\D \int {f( \und{g(x)}{u} ) } \, \und{ \und{g'(x)}{\frac{du}{dx}} \, dx}{du}
+  \;\;=\;\;
+  \D \int f(u)\,du
+$$
+
+mas nós só vamos ver um jeito de dar um significado
+
+\Rd{preciso} pra esse ``$\frac{du}{dx}dx = du$'' em Cálculo 3...
+
+\ssk
+
+(Dê uma olhada também na ``Aula 4'' da Cristiane Hernández).
+
+\newpage
+
+% «exercicio-2»  (to ".exercicio-2")
+% (c2m202isp 11 "exercicio-2")
+% (c2m202is     "exercicio-2")
+
+{\bf Exercício 2.}
+
+\ssk
+
+a) Faça as gambiarras do slide anterior nesta integral daqui,
+%
+$$\D \intx {(1 - (\sen x)^2) (\sen x)^3 \cos x}$$
+
+para transformá-la numa integral em $u$. Use $u=\sen x$.
+
+\ssk
+
+b) Resolva a integral em $u$ que você acabou de obter.
+
+(O resultado dela vai ser um polinômio em $u$).
+
+\ssk
+
+c) Junte tudo numa série de igualdades como as do
+
+``exemplo com gambiarras''. No final você deve chegar
+
+num expressão em $x$ sem sinal de integral.
+
+\newpage
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Integrais de}
+
+\ssk
+
+{\bf \Large  potências de}
+
+\ssk
+
+{\bf \Large senos e cossenos}
+
+\end{center}
+
+
+\newpage
+
+% «exemplo-1»  (to ".exemplo-1")
+% (c2m202isp 12 "exemplo-1")
+% (c2m202is     "exemplo-1")
+% (c2m201ipscp 2 "exemplo-1")
+% (c2m201ipsc    "exemplo-1")
+
+\def\S{\sen x}
+\def\C{\cos x}
+\def\D{\displaystyle}
+\def\und#1#2{\underbrace{#1}_{#2}}
+
+{\bf Exemplo 1}
+%
+$$\begin{array}[t]{l}
+  \D \intx{(\S)^5 (\C)^3} \\
+  \D = \;\; \intx{(\S)^5 (\C)^2 (\C)} \\
+  \D = \;\; \intx{(\und{\S}{s})^5 \und{(\C)^2}{1-s^2} \und{(\C)}{\frac{ds}{dx}}} \\
+  \D = \;\; \ints{s^5 (1-s^2)} \\
+  \D = \;\; \ints{s^5 - s^7} \\
+  \D = \;\; \frac{s^6}{6} - \frac{s^8}{8} \\
+  \D = \;\; \frac{(\S)^6}{6} - \frac{(\S)^8}{8} \\
+  \end{array}
+  \qquad
+  \begin{array}[t]{c}
+  \\ \\
+    \bmat{s = \sen x \\
+          \frac{ds}{dx} = \cos x \\
+          \sen x = s \\
+          (\cos x)^2 = 1 - s^2 \\
+          \cos x \, dx = ds
+    }
+  \end{array}
+$$
+
+\newpage
+
+% «exemplo-1-verif»  (to ".exemplo-1-verif")
+% (c2m202isp 13 "exemplo-1-verif")
+% (c2m202is     "exemplo-1-verif")
+% (c2m201ipscp 3 "exemplo-1-verif")
+% (c2m201ipsc    "exemplo-1-verif")
+
+{\bf Exemplo 1: verificação}
+
+$$\begin{array}[t]{l}
+  \D \ddx \left(\frac{(\S)^6}{6} - \frac{(\S)^7}{7}\right) \\
+  \D = \frac{6(\S)^5\C}{6} - \frac{8(\S)^7\C}{8} \\
+  \D = ((\S)^5 - (\S)^7) \C \\
+  \D = ((\S)^5(1-(\S)^2)) \C \\
+  \D = (\S)^5(\C)^2 \C \\
+  \D = (\S)^5(\C)^3 \\
+  \end{array}
+$$
+
+\newpage
+
+% «anotacoes-a-direita»  (to ".anotacoes-a-direita")
+% (c2m202isp 14 "anotacoes-a-direita")
+% (c2m202is     "anotacoes-a-direita")
+
+{\bf As anotações à direita}
+
+\ssk
+
+Note que à direita das contas do exemplo 1 tinha isso aqui:
+%
+$$\bmat{s = \sen x \\
+       \frac{ds}{dx} = \cos x \\
+       \sen x = s \\
+       (\cos x)^2 = 1 - s^2 \\
+       \cos x \, dx = ds
+  }
+$$
+
+que à primeira vista parece com a operação `$[:=]$',
+
+mas exceto pela primeira linha ele não segue \ColorRed{nenhuma}
+
+das convenções sobre o `$[:=]$' que vimos aqui:
+
+\ssk
+
+% http://angg.twu.net/LATEX/2020-2-C2-intro.pdf#page=6
+\url{http://angg.twu.net/LATEX/2020-2-C2-intro.pdf\#page=6}
+
+\ssk
+
+E ainda por cima ele é usado duas vezes, uma pra mudar
+
+de $x$ pra $s$ e outra pra voltar pra $x$!...
+
+\newpage
+
+% «exemplo-2»  (to ".exemplo-2")
+% (c2m202isp 15 "exemplo-2")
+% (c2m202is     "exemplo-2")
+% (c2m201ipscp 4 "exemplo-2")
+% (c2m201ipsc    "exemplo-2")
+
+{\bf Exemplo 2}
+%
+$$\begin{array}[t]{l}
+  \D \intx{(\S)^5 (\C)^2} \\
+  \D = \;\; \intx{(\S)^4 (\C)^2 \S} \\
+  \D = \;\; \intx{(\und{(\S)^2}{1-c^2})^2 \und{(\C)^2}{c^2} \und{(\S)}{-\frac{dc}{dx}}} \\
+  \D = \;\; \intc{(1-c^2)^2 c^2} \\
+  \D = \;\; \intc{(c^4 - 2c^2 + 1) c^2 (-1)} \\
+  \D = \;\; \intc{-c^6 + 2c^4 - c^2} \\
+  \D = \;\; \ldots \\
+  \end{array}
+  \qquad
+  \begin{array}[t]{c}
+  \\ \\
+    \bmat{c = \cos x \\
+          \frac{dc}{dx} = - \sen x \\
+          \cos x = c \\
+          (\sen x)^2 = 1 - c^2 \\
+          \sen x \, dx = (-1)\,dc
+    }
+  \end{array}
+$$
+
+\newpage
+
+% «exercicio-3»  (to ".exercicio-3")
+% (c2m202isp 16 "exercicio-3")
+% (c2m202is     "exercicio-3")
+% (c2m201ipscp 5 "exercicio-1")
+% (c2m201ipsc    "exercicio-1")
+
+{\bf Exercício 3.}
+
+\ssk
+
+a) Calcule a integral do exemplo 1 -- $\D \intx{(\S)^5 (\C)^3}$ --
+
+usando a substituição $c=\cos x$ ao invés de $s=\sen x$.
+
+\msk
+
+b) Teste o seu resultado.
+
+\bsk
+
+Dica: em algum lugar do teste você vai precisar da identidade
+
+$(\cos x)^2 + (\sen x)^2 = 1$... nós vamos começar a usar
+
+identidades trigonométricas a beça.
+
+
+
+\newpage
+
+% «pares-e-impares»  (to ".pares-e-impares")
+% (c2m201ipscp 6 "pares-e-impares")
+% (c2m201ipsc    "pares-e-impares")
+
+{\bf Dica importante}
+
+\ssk
+
+Pra integrar algo como:
+%
+$$ \intx {(\S)^α (\C)^β}
+$$
+
+Se tanto $α$ quanto $β$ são ímpares as duas subtituições,
+
+$s=\S$ e $c=\C$, funcionam.
+
+\msk
+
+Se só um dos dois é ímpar só uma delas funciona
+
+(não vou dizer qual).
+
+\msk
+
+Se tanto $α$ quanto $β$ são \ColorRed{pares} aí \ColorRed{nenhuma
+
+das duas substituições funciona}, e a gente vai precisar
+
+de técnicas mais avançadas que vamos ver depois.
+
+
+\newpage
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Introdução à}
+
+\ssk
+
+{\bf \Large Substituição}
+
+\ssk
+
+{\bf \Large Trigonométrica}
+
+\end{center}
+
+
+\newpage
+
+% «subst-trig-exemplo»  (to ".subst-trig-exemplo")
+% (c2m202isp 20 "subst-trig-exemplo")
+% (c2m202is     "subst-trig-exemplo")
+
+\def\St{\sen θ}
+\def\Ct{\cos θ}
+\def\Sqs{\sqrt{1-s^2}}
+
+$%\scalebox{0.8}{$
+  \begin{array}[c]{l}
+  \D \ints {s \Sqs} \\
+  = \;\; \D \intth {\St \sqrt{1-(\St)^2} \Ct}  \\
+  = \;\; \D \intth {\St \sqrt{(\Ct)^2} \Ct}  \\
+  = \;\; \D \intth {\St \Ct \Ct}  \\
+  = \;\; \D \intth {(\Ct)^2 \St} \\
+  = \;\; \D \intc  {c^2 · (-1)} \\
+  = \;\; -\frac13 c^3 \\
+  = \;\; -\frac13 (\Ct)^3 \\
+  = \;\; -\frac13 (\sqrt{1-(\St)^2})^3 \\
+  = \;\; -\frac13 (\sqrt{1-s^2})^3 \\
+  \end{array}
+  \qquad
+  \begin{array}[c]{c}
+  \bmat{s = \St \\ \frac{ds}{dθ} = \Ct \\ \Ct \, dθ = ds}
+  \\ \\
+  \bmat{c = \Ct \\ \frac{dc}{dθ} = - \St \\ \St \, dθ = (-1)·dc \\}
+  \end{array}
+  %$}
+$
+\newpage
+
+O exemplo da página anterior usa um monte de técnicas nada óbvias.
+
+A das cinco primeiras linhas dá isso aqui,
+%
+$$\D \ints {s \Sqs} = \intth {(\Ct)^2 \St}$$
+
+Nós vamos começar aprendendo a fazer algo um pouco mais geral:
+
+vamos aprender a ajustar os `$α$'s, `$β$'s, `$γ$'s e `$δ$'s aqui, 
+%
+$$\D \ints {s^α (\Sqs)^β} = \intth {(\Ct)^γ (\St)^δ}$$
+
+e vamos aprender a fazer algo parecido para as substituições
+
+$t = \tanθ$ e $z = \secθ$.
+
+\ssk
+
+Eu vou chamar o `$\Sqs$' de ``o \ColorRed{termo malvado}'' da integral
+
+$\ints {s \Sqs}$. É ele que faz essa integral ser muito difícil de
+
+resolver, e queremos nos livrar dele.
+
+\newpage
+
+{\bf Abreviações}
+
+No exemplão do slide 20 as letras $s$, $θ$ e $c$ sempre denotam
+variáveis,
+
+exceto nas linhas
+%
+$$\frac{ds}{dθ} = \cosθ \qquad \text{e} \qquad \frac{dc}{dθ} = -\senθ$$
+
+das anotações, que usam a ``notação de Leibniz'', na qual podemos
+
+definir coisas como ``$s = \senθ$'' e ``$c = \cosθ$'' e aí tratar os
+`$s$'s e `$c$'s
+
+como \ColorRed{abreviações} para $\senθ$ e $\cosθ$...
+
+\msk
+
+Essas abreviações dão margem pra muita confusão e fazem as pessoas
+cometerem zilhões de erros de conta nos primeiros anos até elas terem
+vários anos de prática. Como vocês não têm anos pra praticar, nem têm
+bibliotecas super confortáveis em que vocês podem passar centenas de
+tardes estudando e discutindo junto com os colegas, nós só vamos usar
+essas abreviações em situações controladas.
+
+\newpage
+
+{\bf Algumas identidades trigonométricas}
+
+A minha memória é \ColorRed{péssima}. Eu não consigo decorar
+praticamente nenhuma fórmula... mas eu consigo lembrar vagamente como
+rededuzir certas fórmulas, e aí eu sempre refaço as demonstrações.
+
+No caso das identidades trigonométricas eu consigo rededuzir elas
+bastante rápido usando essas abreviações aqui embaixo à esquerda, e as
+fórmulas pra derivadas de produtos e quocientes de funções à direita:
+%
+$$\begin{array}[c]{rcl}
+  f &=& f(x) \\
+  g &=& g(x) \\
+  s &=& \sen θ \\
+  c &=& \cos θ \\
+  t &=& \tan θ = \D \frac{\senθ}{\cosθ} = \frac{s}{c} \\[10pt]
+  z &=& \sec θ = \D \frac{1}{\cosθ} = \frac{1}{c} \\
+  \end{array}
+  \qquad
+  \begin{array}[c]{rcl}
+  \D \frac{d}{dx} \frac{1}{g} &=& \D \frac{g'}{g^2} \\[10pt]
+  \D \frac{d}{dx} \frac{f}{g} &=& \D \frac{fg' - f'g}{g^2} \\
+  \end{array}
+$$
+
+\newpage
+
+{\bf Algumas identidades trigonométricas (2)}
+
+$$\begin{array}{rcl}
+  z^2 &=& (\frac 1c)^2 = \frac 1{c^2} = \frac{c^2+s^2}{c^2}
+          = \frac{c^2}{c^2} + \frac{s^2}{c^2} \\[2.5pt]
+      &=& 1 + (\frac sc)^2 \\[2.5pt]
+      &=& 1+t^2 \\
+  \end{array}
+$$
+
+\bsk
+
+$$\begin{array}{lcl}
+  c^2 + s^2 = 1 \\
+  c^2 = 1 - s^2  && c=\sqrt{1-s^2} \\
+  s^2 = 1 - c^2  && s=\sqrt{1-c^2} \\[5pt]
+  z^2 = 1 + t^2  && z=\sqrt{1+t^2} \\
+  t^2 = z^2 - 1  && t=\sqrt{z^2-1} \\
+  \end{array}
+$$
+
+\newpage
+
+{\bf Algumas identidades trigonométricas (3)}
+
+$$\begin{array}{ll}
+  \frac{ds}{dθ} = c
+    \\[2.5pt]
+  \frac{dc}{dθ} = -s
+    \\[2.5pt]
+  \frac{dt}{dθ} = \frac{d}{dθ} \frac{s}{c} = \frac{s'c - sc'}{c^2}
+    = \frac{cc - s·(-s)}{c^2} = \frac{c^2+s^2}{c^2} = \frac{1}{c^2} = z^2
+    \\[2.5pt]
+  \frac{dz}{dθ} = \frac{d}{dθ} \frac{1}{c} = \frac{-c'}{c^2}
+    = \frac{s}{c^2} = \frac{1}{c} \frac{s}{c} = zt \\
+  \\
+  ds =  \cosθ\,dθ     \\[2.5pt]
+  dc = -\senθ\,dθ     \\[2.5pt]
+  dt = -(\secθ)^2\,dθ \\[2.5pt]
+  dz = \secθ \tanθ \,dθ \\[2.5pt]
+  \end{array}
+$$
+
+
+% (c2m201substtrig1p 2 "exemplo-1")
+% (c2m201substtrig1    "exemplo-1")
+
+
+
+
+
+% (find-martinscdipage (+ 10 165) "6.1       Metodo da Substituicao")
+% (find-martinscditext (+ 10 165) "6.1       Metodo da Substituicao")
+% (find-martinscdipage (+ 10 165) "6.1       Metodo da Substituicao")
+% (find-martinscditext (+ 10 165) "6.1       Metodo da Substituicao")
+% (c2m201tfc22p 2 "integral-indefinida")
+% (c2m201tfc22    "integral-indefinida")
+% (c2m201tfc22p 4 "exercicio-1")
+% (c2m201tfc22    "exercicio-1")
+% (c2m201isubp 2 "exemplo-com-gambs")
+% (c2m201isub    "exemplo-com-gambs")
+
 
 %\printbibliography
 
