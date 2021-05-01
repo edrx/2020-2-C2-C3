@@ -62,14 +62,14 @@ tar -cvzf /tmp/2020-2.tgz $(cat /tmp/2020-2.fls)
 cd ~/2020-2-C2-C3/
 tar -xvzf /tmp/2020-2.tgz
 
-git init
-git add README.org
-git add $(cat /tmp/2020-2.fls)
-git commit -m "Initial commit."
+# git init
+# git add README.org
+  git add $(cat /tmp/2020-2.fls)
+# git commit -m "Initial commit."
 
-git branch -M main
-git remote add origin https://github.com/edrx/2020-2-C2-C3.git
-git push -u origin main
+# git branch -M main
+# git remote add origin https://github.com/edrx/2020-2-C2-C3.git
+# git push -u origin main
 
 git add README.org
 git commit -m "Small changes."

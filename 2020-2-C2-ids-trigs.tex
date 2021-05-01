@@ -1,0 +1,314 @@
+% (find-LATEX "2020-2-C2-ids-trigs.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2020-2-C2-ids-trigs.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2020-2-C2-ids-trigs.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2020-2-C2-ids-trigs.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2020-2-C2-ids-trigs.pdf"))
+% (defun e () (interactive) (find-LATEX "2020-2-C2-ids-trigs.tex"))
+% (defun l () (interactive) (find-LATEX "2020-2-C2-ids-trigs.lua"))
+% (defun o () (interactive) (find-LATEX "2020-2-C2-ids-trigs.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2020-2-C2-ids-trigs"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2020-2-C2-ids-trigs.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2020-2-C2-ids-trigs")
+% (find-pdf-page   "~/LATEX/2020-2-C2-ids-trigs.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2020-2-C2-ids-trigs.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2020-2-C2-ids-trigs.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2020-2-C2-ids-trigs.pdf")
+%   file:///home/edrx/LATEX/2020-2-C2-ids-trigs.pdf
+%               file:///tmp/2020-2-C2-ids-trigs.pdf
+%           file:///tmp/pen/2020-2-C2-ids-trigs.pdf
+% http://angg.twu.net/LATEX/2020-2-C2-ids-trigs.pdf
+% (find-LATEX "2019.mk")
+% (find-CN-aula-links "2020-2-C2-ids-trigs" "2" "c2m202it" "c2it")
+%
+% Video:
+% (find-ssr-links "c2m202it" "2020-2-C2-ids-trigs")
+% (code-video     "c2m202itvideo" "$S/http/angg.twu.net/eev-videos/2020-2-C2-ids-trigs.mp4")
+% (find-c2m202itvideo "0:00")
+
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.div-polis»	(to "div-polis")
+%
+% «.djvuize»	(to "djvuize")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx15}               % (find-LATEX "edrx15.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrxchars.tex              % (find-LATEX "edrxchars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+\input 2017planar-has-defs.tex    % (find-LATEX "2017planar-has-defs.tex" "defub")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+
+%L dofile "edrxtikz.lua"  -- (find-LATEX "edrxtikz.lua")
+%L dofile "edrxpict.lua"  -- (find-LATEX "edrxpict.lua")
+%L dofile "2020-2-C2-ids-trigs.lua" -- (find-LATEX "2020-2-C2-ids-trigs.lua")
+\pu
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx15.sty" "colors-2019")
+\long\def\ColorRed   #1{{\color{Red1}#1}}
+\long\def\ColorViolet#1{{\color{MagentaVioletLight}#1}}
+\long\def\ColorViolet#1{{\color{Violet!50!black}#1}}
+\long\def\ColorGreen #1{{\color{SpringDarkHard}#1}}
+\long\def\ColorGreen #1{{\color{SpringGreenDark}#1}}
+\long\def\ColorGreen #1{{\color{SpringGreen4}#1}}
+\long\def\ColorGray  #1{{\color{GrayLight}#1}}
+\long\def\ColorGray  #1{{\color{black!30!white}#1}}
+\long\def\ColorBrown #1{{\color{Brown}#1}}
+\long\def\ColorBrown #1{{\color{brown}#1}}
+\long\def\ColorOrange#1{{\color{orange}#1}}
+
+\long\def\ColorShort #1{{\color{SpringGreen4}#1}}
+\long\def\ColorLong  #1{{\color{Red1}#1}}
+
+\def\frown{\ensuremath{{=}{(}}}
+\def\True {\mathbf{V}}
+\def\False{\mathbf{F}}
+\def\D    {\displaystyle}
+
+\def\drafturl{http://angg.twu.net/LATEX/2020-2-C2.pdf}
+\def\drafturl{http://angg.twu.net/2020.2-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m202itp 1 "title")
+% (c2m202it    "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2020.2}
+
+\bsk
+
+Aula ??: Identidades trigonométricas
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2020.2-C2.html}
+
+\end{center}
+
+\newpage
+
+% «div-polis»  (to ".div-polis")
+% (c2m202itp 2 "div-polis")
+% (c2m202it    "div-polis")
+
+Nos slides sobre Frações Parciais nós vimos que contas com
+
+polinômios são parecidas com contas com números ``sem vai um''...
+
+
+
+%R A = 1/ __ __ __ __ \
+%R      |     2  3  1 |
+%R      | !X     1  2 |
+%R      |    -------- |
+%R      |        1  2 |
+%R      |     3  6    |
+%R      |  2  4       |
+%R      |  ---------- |
+%R      \  2  7  7  2 /
+%R
+%R cc = A:toccells()
+%R mp = MixedPicture.new({zdef="mult numeric", scale="14pt", meta="", celllower="3.5pt"})
+%R cc:addcellsto(mp)
+%R cc:addLineto(mp, {1,2}, {4,2})
+%R cc:addLineto(mp, {0,5}, {4,5})
+%R
+%R mp:output()
+%R
+%R A = 1/ ____ _____  ___  __ \
+%R      |       2x^2  +3x  +1 |
+%R      |  !X           x  +2 |
+%R      |       ------------- |
+%R      |               x  +2 |
+%R      |       3x^2  +6x     |
+%R      | 2x^3 +4x^2          |
+%R      | ------------------- |
+%R      \ 2x^3 +7x^2  +7x  +2 /
+%R
+%R cc = A:toccells()
+%R cc.xscale = 2
+%R mp = MixedPicture.new({zdef="mult poly", scale="14pt", meta="", celllower="3.5pt"})
+%R cc:addcellsto(mp)
+%R cc:addLineto(mp, {1,2}, {4,2})
+%R cc:addLineto(mp, {0,5}, {4,5})
+%R
+%R mp:output()
+
+% (c2m202fpp 6 "contas-sem-vai-um")
+% (c2m202fp    "contas-sem-vai-um")
+% (c2m202fpp 7 "div-polis")
+% (c2m202fp    "div-polis")
+
+%R A = 1/ _ _ _ _ _   _ _ _ \
+%R      |   2 7 7 3 |   1 2 |
+%R      |           +------ |
+%R      | - 2 4       2 3 1 |
+%R      |   ---             |
+%R      |     3 7           |
+%R      |   - 3 6           |
+%R      |     ---           |
+%R      |       1 3         |
+%R      |     - 1 2         |
+%R      |       ---         |
+%R      \         1         /
+%R
+%R cc = A:toccells()
+%R mp = MixedPicture.new({zdef="div numeric", scale="14pt", meta=""})
+%R cc:addcellsto(mp)
+%R cc:addLineto(mp, {1,2}, {3,2})
+%R cc:addLineto(mp, {2,4}, {4,4})
+%R cc:addLineto(mp, {3,6}, {5,6})
+%R cc:addLineto(mp, {5,0}, {5,1}, {8,1})
+%R mp:output()
+%R
+%R A = 1/ _ _____ ______ ____  ___   ____ ___ ___ \
+%R      |    2x^3 +7x^2  +7x   +3  |        x  +2 |
+%R      |                          +------------- |
+%R      | - (2x^3 +4x^2)             2x^2 +3x  +1 |
+%R      |   ------------                          |
+%R      |          3x^2  +7x                      |
+%R      |      -  (3x^2  +6x)                     |
+%R      |         -----------                     |
+%R      |                  x   +3                 |
+%R      |            -    (x   +2)                |
+%R      |                ---------                |
+%R      \                       1                 /
+%R
+%R cc = A:toccells()
+%R cc.xscale = 2
+%R mp = MixedPicture.new({zdef="div poly 1", scale="14pt", meta=""})
+%R mp = MixedPicture.new({zdef="div poly 1", scale="14pt", meta="", celllower="3.5pt"})
+%R cc:addcellsto(mp)
+%R cc:addLineto(mp, {1,2}, {3,2})
+%R cc:addLineto(mp, {2,4}, {4,4})
+%R cc:addLineto(mp, {3,6}, {5,6})
+%R cc:addLineto(mp, {5,0}, {5,1}, {8,1})
+%R
+%R mp:output()
+\pu
+%
+$$\def\X{×}
+  \def\H#1{\hspace*{#1}}
+  \scalebox{0.8}{$
+  \begin{array}{rcl}
+  \zha{mult numeric} \H{1cm} &⇒& \H{1.75cm} \zha{mult poly}
+  \\[60pt]
+  \zha{div numeric}  \H{0.5cm} &⇒& \H{0cm}  \zha{div poly 1}
+  \end{array}
+  $}
+$$
+
+
+
+\newpage
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2020.2-C2/")
+# (find-fline "~/LATEX/2020-2-C2/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2020.2-C2/
+       cp -fv        $1.pdf ~/LATEX/2020-2-C2/
+       cat <<%%%
+% (find-latexscan-links "C2" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2020-2-C2-ids-trigs veryclean
+make -f 2019.mk STEM=2020-2-C2-ids-trigs pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2m202it"
+% End:

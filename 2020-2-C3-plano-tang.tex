@@ -4,6 +4,7 @@
 % (defun D () (interactive) (find-pdf-page      "~/LATEX/2020-2-C3-plano-tang.pdf"))
 % (defun d () (interactive) (find-pdftools-page "~/LATEX/2020-2-C3-plano-tang.pdf"))
 % (defun e () (interactive) (find-LATEX "2020-2-C3-plano-tang.tex"))
+% (defun l () (interactive) (find-LATEX "2020-2-C3-plano-tang.lua"))
 % (defun o () (interactive) (find-LATEX "2020-2-C3-plano-tang.tex"))
 % (defun u () (interactive) (find-latex-upload-links "2020-2-C3-plano-tang"))
 % (defun v () (interactive) (find-2a '(e) '(d)))
@@ -26,8 +27,38 @@
 % (code-video     "c3m202planotangvideo" "$S/http/angg.twu.net/eev-videos/2020-2-C3-plano-tang.mp4")
 % (find-c3m202planotangvideo "0:00")
 
-% «.defs»	(to "defs")
-% «.title»	(to "title")
+% (find-ssr-links "c3m202planotang2" "2020-2-C3-plano-tang-2")
+% (code-video "c3m202planotang2video" "$S/http/angg.twu.net/eev-videos/2020-2-C3-plano-tang-2.mp4")
+% (find-c3m202planotang2video "0:00")
+
+% (find-ssr-links "c3m202planotang3" "2020-2-C3-plano-tang-3")
+% (code-video "c3m202planotang3video" "$S/http/angg.twu.net/eev-videos/2020-2-C3-plano-tang-3.mp4")
+% (find-c3m202planotang3video "0:00" "Como visualizar derivadas")
+
+% (find-ssr-links "c3m202planotang4" "2020-2-C3-plano-tang-4")
+% (code-video "c3m202planotang4video" "$S/http/angg.twu.net/eev-videos/2020-2-C3-plano-tang-4.mp4")
+% (find-c3m202planotang4video "0:00")
+% (find-c3m202planotang4video "0:00" "Pra explicar os exercicios 9 e 10")
+
+% «.defs»			(to "defs")
+% «.title»			(to "title")
+% «.exercicio-1»		(to "exercicio-1")
+% «.exercicio-2»		(to "exercicio-2")
+% «.geral-e-particular»		(to "geral-e-particular")
+% «.material-GA»		(to "material-GA")
+% «.exercicio-5»		(to "exercicio-5")
+% «.bortolossi-cap-7»		(to "bortolossi-cap-7")
+% «.exercicio-6»		(to "exercicio-6")
+% «.exercicio-7»		(to "exercicio-7")
+% «.dicas-7»			(to "dicas-7")
+% «.derivs-como-triangs»	(to "derivs-como-triangs")
+% «.dicas-6a-e-6d»		(to "dicas-6a-e-6d")
+% «.exercicio-8»		(to "exercicio-8")
+% «.exercicio-9»		(to "exercicio-9")
+% «.3D-fig»			(to "3D-fig")
+% «.exercicio-10»		(to "exercicio-10")
+% «.2021-04-16»			(to "2021-04-16")
+% «.grad-intro»			(to "grad-intro")
 %
 % «.djvuize»	(to "djvuize")
 
@@ -63,12 +94,13 @@
 %
 \begin{document}
 
-%\catcode`\^^J=10
-%\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
 
-% %L dofile "edrxtikz.lua"  -- (find-LATEX "edrxtikz.lua")
-% %L dofile "edrxpict.lua"  -- (find-LATEX "edrxpict.lua")
-% \pu
+%L dofile "edrxtikz.lua"             -- (find-LATEX "edrxtikz.lua")
+%L dofile "edrxpict.lua"             -- (find-LATEX "edrxpict.lua")
+%L dofile "2020-2-C3-plano-tang.lua" -- (find-LATEX "2020-2-C3-plano-tang.lua")
+\pu
 
 % «defs»  (to ".defs")
 % (find-LATEX "edrx15.sty" "colors-2019")
@@ -204,6 +236,10 @@ algumas curvas de nível de planos.
 
 \msk
 
+% «exercicio-1»  (to ".exercicio-1")
+% (c3m202planotangp 5 "exercicio-1")
+% (c3m202planotang    "exercicio-1")
+
 {\bf Exercício 1.}
 
 Em cada um dos casos abaixo a função $F$ vai ser definida por
@@ -238,6 +274,751 @@ d) $(x_0,y_0) = (4,2)$, $a=2$, $b=2$, $c=-1$.
 e) $(x_0,y_0) = (3,3)$, $a=2$, $b=2$, $c=-1$.
 
 
+\newpage
+
+Agora vamos recuar um pouco e fazer uns exercícios
+
+sobre planos, sem considerá-los como planos tangentes
+
+a alguma superfície não-plana...
+
+\bsk
+
+% «exercicio-2»  (to ".exercicio-2")
+% (c3m202planotangp 7 "exercicio-2")
+% (c3m202planotang    "exercicio-2")
+
+{\bf Exercício 2.}
+
+Sejam $π_1, π_2, π_3$ estes planos aqui:
+%
+$$\begin{array}{rcl}
+  π_1 &=& \setofxyzst{x + y + z = 2} \\
+  π_2 &=& \setofxyzst{\frac{x}{2} + \frac{y}{3} + \frac{z}{6} = 1} \\
+  π_3 &=& \setofxyzst{\frac{x}{2} - \frac{y}{3} + \frac{z}{6} = 1} \\
+  \end{array}
+$$
+
+Para cada um destes planos encontre:
+
+a) um ponto da forma $(x,0,0)$ pertencente a ele,
+
+b) um ponto da forma $(0,y,0)$ pertencente a ele,
+
+c) um ponto da forma $(0,0,z)$ pertencente a ele,
+
+E use isto para desenhar estes planos em 3D, em
+
+perspectiva (improvisada, à mão, sem régua).
+
+\newpage
+
+{\bf Exercício 2 (cont.)}
+
+Para cada um dos planos $π_1, π_2, π_3$, do slide anterior, diga:
+
+d) um vetor não-nulo da forma $\VEC{x,y,0}$ paralelo a ele,
+
+e) um vetor não-nulo da forma $\VEC{x,0,z}$ paralelo a ele,
+
+f) um vetor não-nulo da forma $\VEC{0,y,z}$ paralelo a ele,
+
+g) um vetor da forma $\VEC{1,0,z}$ paralelo a ele,
+
+h) um vetor da forma $\VEC{0,1,z}$ paralelo a ele,
+
+i) um vetor da forma $\VEC{1,y,0}$ paralelo a ele.
+
+\msk
+
+As dicas pra fazer tudo isso visualmente estão no próximo slide.
+
+\msk
+
+{\bf Importante:} tente representar os itens (a) até (i) do plano
+$π_1$
+
+num desenho só em perspectiva improvisada, os itens (a) até (i)
+
+do $π_2$ num segundo desenho, e os itens (a) até (i) do $π_3$ num
+
+terceiro desenho.
+
+
+\newpage
+
+{\bf Exercício 2: dica 1}
+
+Nós estamos fazendo nossos desenhos 3D usando eixos em
+
+duas posições diferentes, como abaixo. Alguns itens vão ser
+
+mais fáceis de desenhar numa posição, outros noutra.
+
+% (find-latexscan-links "C3" "20210407_eixos")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210407_eixos.pdf")
+\includegraphics[height=5cm]{2020-2-C3/20210407_eixos.pdf}
+
+
+\newpage
+
+% «geral-e-particular»  (to ".geral-e-particular")
+% (c3m202planotangp 10 "geral-e-particular")
+% (c3m202planotang     "geral-e-particular")
+
+{\bf Exercício 2: dica 2}
+
+Quando os livros de GA fazem um desenho que parece ser um
+
+caso geral na verdade eles usam um caso particular disfarçado...
+
+Por exemplo:
+
+\bsk
+
+$
+% (find-latexscan-links "C3" "20210407_vetores_caso_geral")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210407_vetores_caso_geral.pdf")
+\myvcenter{\includegraphics[height=4.5cm]{2020-2-C3/20210407_vetores_caso_geral.pdf}}
+\quad
+$⇒$
+\quad
+% (find-latexscan-links "C3" "20210407_vetores_caso_particular")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210407_vetores_caso_particular.pdf")
+\myvcenter{\includegraphics[height=4.5cm]{2020-2-C3/20210407_vetores_caso_particular.pdf}}
+$
+
+\newpage
+
+{\bf Exercício 3.}
+
+Assista este vídeo aqui:
+
+\ssk
+
+{\footnotesize
+
+\url{http://angg.twu.net/eev-videos/2020-2-C3-plano-tang.mp4}
+
+}
+
+\ssk
+
+E faça o ``caso geral'' ao qual ele se refere.
+
+Mais precisamente: seja $π_4$ um plano que contém os pontos
+
+$(a,0,0)$, $(0,b,0)$, $(0,0,c)$, e faça os itens (a) até (i)
+
+do exercício 2 para este plano $π_4$.
+
+
+\newpage
+
+{\bf Exercício 4.}
+
+Sejam $P=(0,0,a)$, $\vv = \VEC{1,0,b}$, $\ww = \VEC{0,1,c}$, e:
+%
+$$\begin{array}{rcl}
+  π_5 &=& \setofst{P+\aa\vv+\bb\ww}{α,β∈\R} \\
+      &=& \setofst{(0,0,a)+\aa\VEC{1,0,b}+\bb\VEC{0,1,c}}{α,β∈\R} \\
+  \end{array}
+$$
+
+a) Encontre um ponto de $π_6$ da forma $(x,0,0)$.
+
+b) Encontre um ponto de $π_6$ da forma $(0,y,0)$.
+
+c) Encontre um ponto de $π_6$ da forma $(0,0,z)$.
+
+\msk
+
+d) Represente graficamente, num gráfico só com
+
+perspectiva improvisada: $P$, $P+\vv$, $P+\ww$,
+
+e os pontos dos seus itens (a), (b) e (c).
+
+\msk
+
+e) Complete as lacunas com as fórmulas certas:
+%
+$$\begin{array}{rcl}
+  π_5 % &=& \setofst{P+\aa\vv+\bb\ww}{α,β∈\R} \\
+      &=& \setofst{(0,0,a)+\aa\VEC{1,0,b}+\bb\VEC{0,1,c}}{α,β∈\R} \\
+      &=& \setofxyzst{z = ▁ + ▁x + ▁y} \\
+  \end{array}
+$$
+
+
+
+
+\newpage
+
+% «material-GA»  (to ".material-GA")
+% (c3m202planotangp 13 "material-GA")
+% (c3m202planotang     "material-GA")
+
+{\bf Material de Geometria Analítica}
+
+No tempo em que dei Geometria Analítica eu preparei um monte
+
+de material com exercícios parecidos com os que vocês acabaram
+
+de fazer, em que a gente começava por casos particulares com
+
+contas fáceis e que eram fáceis de desenhar e aí a gente
+
+generalizava eles... o link pra esse material está aqui:
+
+\ssk
+
+\url{http://angg.twu.net/LATEX/material-para-GA.pdf}
+
+\ssk
+
+Talvez eu peça pra vocês fazerem alguns exercícios dele depois...
+
+
+
+\newpage
+
+% «exercicio-5»  (to ".exercicio-5")
+% (c3m202planotangp 14 "exercicio-5")
+% (c3m202planotang     "exercicio-5")
+
+O melhor modo de desenhar planos em $\R^3$ é desenhando as interseções
+desse plano com os planos $π_{xy}$, $π_{xz}$, e $π_{yz}$, ou pedaços
+dessas interseções. Nos exercícios anteriores nós fizemos isto pra
+planos da forma
+%
+$$\setofxyzst{\textstyle \frac xa + \frac yb + \frac zc = 0},$$
+%
+em que desenhamos a interseção deles com um octante do $\R^3$, que era
+um triângulo. Agora vamos ver planos que contêm retas parelelas aos
+eixos.
+
+Lembre que você pode desenhar as suas perspectivas de
+jeitos bem improvisados, desde que as coordenadas dos pontos estejam
+claras... e lembre que o Danilo Pereira, que fez o vídeo que eu
+recomendei no mini-teste 2, usa uma perspectiva bem tosca, que não é
+isométrica! Links:
+
+\ssk
+
+{\footnotesize
+
+% https://pt.wikipedia.org/wiki/Perspectiva_isom%C3%A9trica
+\url{https://pt.wikipedia.org/wiki/Perspectiva_isom\%C3\%A9trica}
+
+\url{https://pt.wikipedia.org/wiki/Octante_(geometria_espacial)}
+
+}
+
+\bsk
+
+{\bf Exercício 5.}
+
+Represente graficamente os planos abaixo (em $\R^3$).
+
+Considere que $a,b,c>0$. 
+
+a) $π_7 = \setofxyzst{\frac ax + \frac by = 1}$
+
+b) $π_8 = \setofxyzst{\frac ax + \frac cz = 1}$
+
+c) $π_9 = \setofxyzst{\frac by + \frac cz = 1}$
+
+
+
+
+\newpage
+
+% «bortolossi-cap-7»  (to ".bortolossi-cap-7")
+% (c3m202planotangp 16 "bortolossi-cap-7")
+% (c3m202planotang     "bortolossi-cap-7")
+
+No mini-teste 2 você deve ter aprendido a representar graficamente
+vários tipos de objetos em $\R^3$, tanto em casos particulares quanto
+em casos gerais... agora vamos usar isto pra entender como o
+Bortolossi define a derivada de uma função de $\R^m$ em $\R^n$ usando
+a matriz Jacobiana, no capítulo 7, na página 256.
+
+Vamos começar entendendo o que ele faz no início do capítulo 7, em que
+ele considera uma função de $\R^1$ em $\R^1$.
+
+% (find-bortolossi7page (+ -238 256) "matriz jacobiana")
+
+
+\newpage
+
+% «exercicio-6»  (to ".exercicio-6")
+% (c3m202planotangp 17 "exercicio-6")
+% (c3m202planotang     "exercicio-6")
+
+{\bf Exercício 6.}
+
+$
+% (find-latexscan-links "C3" "20210414_bortolossi_p240_a_b")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210414_bortolossi_p240_a_b.pdf")
+\myvcenter{
+\includegraphics[height=7.2cm]{2020-2-C3/20210414_bortolossi_p240_a_b.pdf}
+}
+\qquad
+%
+% (find-latexscan-links "C3" "20210414_bortolossi_p240_c")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210414_bortolossi_p240_c.pdf")
+\myvcenter{
+\includegraphics[height=3cm]{2020-2-C3/20210414_bortolossi_p240_c.pdf}
+}
+$
+
+\newpage
+
+{\bf Exercício 6 (cont.)}
+
+% (find-latexscan-links "C3" "20210414_bortolossi_p240_d_e")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210414_bortolossi_p240_d_e.pdf")
+\includegraphics[height=7cm]{2020-2-C3/20210414_bortolossi_p240_d_e.pdf}
+
+\newpage
+
+Agora vamos tentar entender a seção ``Funções vetoriais:
+
+o caso geral'' do Bortolossi, que começa na p.253.
+
+\bsk
+
+% «exercicio-7»  (to ".exercicio-7")
+% (c3m202planotangp 19 "exercicio-7")
+% (c3m202planotang     "exercicio-7")
+
+{\bf Exercício 7.}
+
+Leia ela até a página 255. Suponha que $n=2$, $m=1$,
+
+$D=\R^2$, $𝐛p=(2,3)$, $𝐛x=(42,99)$.
+
+a) Simplifique o máximo possível a definição do $D𝐛f(𝐛p)$
+
+neste caso. O resultado vai dar ou uma matriz $2×1$ ou
+
+uma matriz $1×2$.
+
+b) Simplifique o máximo possível a fórmula (7.6) da
+
+página 255, que é:
+%
+$$𝐛f(𝐛x) = 𝐛f(𝐛p) + D𝐛f(𝐛p)·(𝐛x-𝐛p) + 𝐛R(𝐛p,𝐛x)$$
+
+Esse `$·$' é uma multiplicação de matrizes.
+
+c) Faça o mesmo para a fórmula no início da página 256.
+
+\newpage
+
+% «dicas-7»  (to ".dicas-7")
+% (c3m202planotangp 20 "dicas-7")
+% (c3m202planotang     "dicas-7")
+% (find-fline "~/2020.2-C2/tmp/")
+% (find-fline "~/2020.2-C2/tmp/20210416_C3_dica_bortolossi.jpg")
+% (find-bortolossi7page (+ -238 256)    "matriz jacobiana")
+
+{\bf Dicas pro exercício 7}
+
+Se $m=3$ e $n=4$ então a matriz jacobiana da p.256
+
+do Bortolossi vira isso aqui:
+
+\def\fxp#1#2{\frac{∂f_#1}{∂x_#2}(𝐛p)}
+
+$$D𝐛f(𝐛p) =
+  \bmat{
+  \fxp11 & \fxp12 & \fxp13 & \fxp14 \\[5pt]
+  \fxp21 & \fxp22 & \fxp23 & \fxp24 \\[5pt]
+  \fxp31 & \fxp32 & \fxp33 & \fxp34 \\
+  }_{3×4} \;,
+$$
+
+e: \;\;
+   $𝐛x-𝐛p = \bmat{x_1 \\ x_2 \\ x_3 \\ x_4} -  
+             \bmat{p_1 \\ p_2 \\ p_3 \\ p_4}
+           = \bmat{x_1-p_1 \\ x_2-p_2 \\ x_3-p_3 \\ x_4-p_4}
+$
+
+\msk
+\msk
+
+compare com o que aparece no início da p.255, e veja que
+
+sabendo $m$ e $n$ a gente consegue se livrar das reticências...
+
+
+
+
+\newpage
+
+% «exercicio-8»  (to ".exercicio-8")
+% (c3m202planotangp 20 "exercicio-8")
+% (c3m202planotang     "exercicio-8")
+% (find-bortolossi7page (+ -238 242) "7.2. Aproximação linear em Cálculo 2")
+
+{\bf Exercício 8.}
+
+Digamos que $π$ seja o plano que passa pelos pontos
+
+$(a,0,0)$, $(0,b,0)$, $(0,0,c)$ --- o do mini-teste.
+
+\msk
+
+Na seção 7.2 do Bortolossi ele diz que um certo plano
+
+tangente a uma superfície é:
+%
+$$z = l(x,y) = α + β·x + γ·y$$
+
+Digamos que esse plano $z = l(x,y)$ seja o nosso plano
+
+$π$, que passa por $(a,0,0)$, $(0,b,0)$, $(0,0,c)$.
+
+\msk
+
+a) Quem são $α$, $β$, e $γ$?
+
+b) Quem são as derivadas parciais da função $l$?
+
+
+\newpage
+
+% «derivs-como-triangs»  (to ".derivs-como-triangs")
+% (c3m202planotangp 22 "derivs-como-triangs")
+% (c3m202planotang     "derivs-como-triangs")
+
+{\bf Derivadas como triângulos}
+
+Vamos voltar ao início do capítulo 7 do Bortolossi um pouco.
+
+Nós podemos interpretar a derivada de uma função $f:\R→\R$
+
+num ponto $p∈\R$, $f'(p)$, como uma razão entre distâncias
+
+hortizontais e distncias verticais. Por exemplo, nós já vimos
+
+esta fórmula várias vezes,
+%
+$$Δy = f'(p)Δx$$
+
+às vezes com `$≈$', às vezes com `$=$'... e já vimos o que
+
+quer dizer geometricamente nós termos $f'(p)=\frac12$, $f'(p)=2$,
+
+$f'(p)=-1$...
+
+\newpage
+
+{\bf Derivadas como triângulos (2)}
+
+Existem muitos jeitos de representar graficamente algo
+
+como ``$f'(p) = \frac12$''. Um deles é representar cada $f'(p)$
+
+como um triângulo retângulo como o abaixo,
+
+% (find-latexscan-links "C3" "20210416_fp")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210416_fp.pdf")
+\includegraphics[height=4cm]{2020-2-C3/20210416_fp.pdf}
+
+com  o vértice esquerdo no ponto $(p,f(p))$, e com o cateto
+
+de baixo medindo $Δx$ e o cateto da direita medindo $Δy$...
+
+\ssk
+
+Às vezes isto é bem melhor que visualizar $f'(p)$ como $\tanθ$.
+
+
+\newpage
+
+% «dicas-6a-e-6d»  (to ".dicas-6a-e-6d")
+% (c3m202planotangp 24 "dicas-6a-e-6d")
+% (c3m202planotang     "dicas-6a-e-6d")
+
+{\bf Dicas sobre os exercícios 6a e o 6d}
+
+Na aula de 18/abril quando nós estávamos discutindo o exercício 6a no
+Telegram algumas pessoas viram que era muito difícil fazer o diagrama
+direito, porque elas teriam que desenhar muitos objetos juntos numa
+área pequena do diagrama... aí eu mandei a sugestão do próximo slide,
+em que uma parte do diagrama é representada várias vezes em lugares
+diferentes do papel, cada vez com detalhes diferentes sendo
+indicados...
+
+Lembre da dica 7 daqui:
+
+% \ssk
+
+{\footnotesize
+
+% http://angg.twu.net/LATEX/material-para-GA.pdf#page=5
+\url{http://angg.twu.net/LATEX/material-para-GA.pdf\#page=5}
+
+}
+
+\ssk
+
+Quando não funciona bem fazer um diagrama do jeito mais óbvio a gente
+pode improvisar um pouco, desde que os leitores consigam entender o
+que a gente fez.
+
+
+
+\newpage
+
+% (find-latexscan-links "C3" "20210428_C3_6a")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210428_C3_6a.pdf")
+\includegraphics[height=8cm]{2020-2-C3/20210428_C3_6a.pdf}
+
+
+\newpage
+
+% «exercicio-9»  (to ".exercicio-9")
+% (c3m202planotangp 26 "exercicio-9")
+% (c3m202planotang     "exercicio-9")
+
+{\bf Dicas sobre os exercícios 6a e o 6d (cont.)}
+
+Quando o curso de Cálculo 3 era presencial era fácil pôr as pessoas
+pra discutirem em grupo pra entenderem as convenções dos diagramas dos
+livros e pra encontrarem jeitos de desenhar novos diagramas que os
+colegas achassem bons...
+
+\msk
+
+Eu ainda não sei fazer algo assim acontecer por Telegram ${=}($
+
+\msk
+
+{\bf Exercício 9}
+
+O diagrama do próximo slide é uma tentativa de adaptar o diagram do
+slide anterior --- da dica do exercício 6a --- para algo 3d. Eu ainda
+não sei fazer esses diagramas direito no computador, então à direita
+do diagrama feito por computador eu pus uma versão dele feita à mão
+com os nomes dos pontos. Digamos que $A=(x_0,y_0,z_0)$, e que
+$\Vec{AE} = \VEC{1,0,F_x(x_0,y_0)}$ e $\Vec{AG} =
+\VEC{0,1,F_y(x_0,y_0)}$. Descubra as coordenadas dos pontos
+$B,C,D,E,F,G,H,I$.
+
+
+
+\newpage
+
+% «3D-fig»  (to ".3D-fig")
+% (c3m202planotangp 24 "3D-fig")
+% (c3m202planotang     "3D-fig")
+
+% (find-LATEX "edrxgac2.tex" "beginpicture")
+\def\pictgray#1{{\color{GrayPale}\linethickness{0.3pt}#1}}
+
+%L rv = savevars(function (...)
+%L      ex,ey,vx,vy, A0, A,B,C,D,E,F,E,G = ... end,
+%L      ex,ey,vx,vy, A0, A,B,C,D,E,F,E,G)
+%L
+%L ex = v3(1,0,0)
+%L ey = v3(0,1,0)
+%L vx = v3(0,0,0.5)
+%L vy = v3(0,0,1.5)
+%L vz = v3(0,0,0.5)
+%L A0 = v3(2,1,0); B0 = A0 + ex; C0 = A0 + ey; D0 = B0 + ey
+%L A  = A0 + vz
+%L B  = A + ex
+%L C  = A + ey
+%L D  = A + ex + ey
+%L E  = B + vx
+%L F  = E + ey
+%L G  = C + vy
+%L H  = G + ex
+%L I  = H + vx
+%L
+%L V3.__index.p1 = V{2,-0.5}
+%L V3.__index.p2 = V{1,1.25}
+%L
+\pu
+
+$%\bhbox{$
+ \vcenter{\hbox{%
+ \unitlength=20pt
+ \beginpicture(0,-4)(8,8)
+%P \pictgray{<v3():xygrid(3,3)>}
+%P <v3():axeswithticks(3,3,3)>
+%P \pictgray{\Line<A0><A> \Line<B0><B> \Line<C0><C> \Line<D0><D>}
+%P \Line<A><B><D><C><A>
+%P \Line<A><E><B> \Line<E><F><I><E>
+%P \Line<A><G><C> \Line<G><H><I><G>
+%P \Line<D><F>
+ \pu
+ \end{picture}%
+ }}
+ %$}
+ %
+ \qquad
+ % (find-latexscan-links "C3" "20210428_C3_exercicio_9")
+ % (find-xpdf-page "~/LATEX/2020-2-C3/20210428_C3_exercicio_9.pdf")
+ \myvcenter{
+ \includegraphics[height=5cm]{2020-2-C3/20210428_C3_exercicio_9.pdf}
+ }
+$
+%
+
+%L rv()
+\pu
+
+% Falta:
+%\put(3,6.25){\cell{(3,6)}}%
+%\put(8,0.75){\cell{(8,1)}}%
+
+
+
+
+
+\newpage
+
+% «exercicio-10»  (to ".exercicio-10")
+% (c3m202planotangp 28 "exercicio-10")
+% (c3m202planotang     "exercicio-10")
+
+{\bf Exercício 10.}
+
+(Este exercício generaliza as idéias do 9).
+
+\ssk
+
+Sejam:
+%
+$$\begin{array}{rcl}
+  F &:& \R^2 → \R, \\
+  S &=& \setofxyzst{z=F(x,y)}, \\
+  A_0 &=& (x_0,y_0), \\
+  A &=& (x_0,y_0,F(x_0,y_0)), \\
+  \vv &=& \VEC{1,0,F_x(A_0)}, \\
+  \ww &=& \VEC{0,1,F_y(A_0)}, \\
+  α,β &∈& \R. \\
+  \end{array}
+$$
+
+a) Identifique no diagrama do próximo slide os pontos:
+
+$A+\vv$, $A+\aa\vv$, $A+\ww$, $A+\bb\ww$, $A+\aa\vv+\bb\ww$, 
+
+Dica: $α$ é aproximadamente 4, e $β$ aproximadamente 2.5.
+
+\newpage
+
+% (find-latexscan-links "C3" "20210428_C3_exercicio_10")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210428_C3_exercicio_10.pdf")
+\includegraphics[height=8cm]{2020-2-C3/20210428_C3_exercicio_10.pdf}
+
+
+\newpage
+
+{\bf Exercício 10 (cont.)}
+
+\msk
+
+b) Verifique -- visualmente -- que os pontos
+
+$A+\vv$, $A+\aa\vv$, $A+\ww$, $A+\bb\ww$, $A+\aa\vv+\bb\ww$, 
+
+do item (a) estão todos no mesmo plano.
+
+\msk
+
+c) Verifique que esse plano é o plano tangente
+
+à superfície $S$ no ponto $A$.
+
+
+\newpage
+
+% «2021-04-16»  (to ".2021-04-16")
+% (find-fline "~/2020.2-C2/tmp/" "20210416_C3_derivada_triangulo.jpg")
+% (find-fline "~/2020.2-C2/tmp/" "20210416_C3_derivada_triangulos.jpg")
+% (find-fline "~/2020.2-C3/C3-M1-RCN-PURO-2020.2/" "messages3.html")
+% (kill-new "14 April 2021")
+% (kill-new "16 April 2021")
+
+\newpage
+
+% «grad-intro»  (to ".grad-intro")
+% (c3m202planotangp 31 "grad-intro")
+% (c3m202planotang     "grad-intro")
+
+{\bf Introdução ao vetor gradiente}
+
+...então, primeiro eu preciso que voces relembrem dessa figura e
+encontrem uma fórmula pra função $F(x,y)$, e depois calculem as
+derivadas parciais $F_x(x_0,y_0)$ e $F_y(x_0,y_0)$ - elas devem dar
+expressões que não dependem dos valores de $x_0$ e $y_0$.
+
+% (find-latexscan-links "C3" "20210430_grad_superficie_orig")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210430_grad_superficie_orig.pdf")
+\includegraphics[height=5cm]{2020-2-C3/20210430_grad_superficie_orig.pdf}
+
+\newpage
+
+\begin{tabular}[c]{c}
+%
+% (find-latexscan-links "C3" "20210430_grad_notacao_bort")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210430_grad_notacao_bort.pdf")
+\includegraphics[height=6.5cm]{2020-2-C3/20210430_grad_notacao_bort.pdf}
+\\
+O resultado disso deve \\
+dar uma matrix $2×1$.
+\end{tabular}
+%
+\qquad
+%
+\begin{tabular}[c]{c}
+% (find-latexscan-links "C3" "20210430_grad_leia_a_definicao")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210430_grad_leia_a_definicao.pdf")
+\includegraphics[height=8cm]{2020-2-C3/20210430_grad_leia_a_definicao.pdf}
+\end{tabular}
+
+\newpage
+
+\vspace*{-1cm}
+
+\begin{tabular}[c]{c}
+% (find-latexscan-links "C3" "20210430_grad_444_intro")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210430_grad_444_intro.pdf")
+\includegraphics[height=3cm]{2020-2-C3/20210430_grad_444_intro.pdf}
+\\[-10pt]
+% (find-latexscan-links "C3" "20210430_grad_444")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210430_grad_444.pdf")
+\includegraphics[height=6.0cm]{2020-2-C3/20210430_grad_444.pdf}
+\end{tabular}
+%
+\quad
+%
+\begin{tabular}[c]{c}
+% (find-latexscan-links "C3" "20210430_grad_422")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210430_grad_422.pdf")
+\includegraphics[height=9cm]{2020-2-C3/20210430_grad_422.pdf}
+\end{tabular}
+
+\newpage
+
+%
+\qquad
+%
+% (find-latexscan-links "C3" "20210430_grad_423")
+% (find-xpdf-page "~/LATEX/2020-2-C3/20210430_grad_423.pdf")
+\includegraphics[height=8cm]{2020-2-C3/20210430_grad_423.pdf}
+
+
+
+
+% (find-bortolossi7page (+ -238 239) "7. Aproximação linear e a regra da cadeia")
 
 
 
@@ -280,9 +1061,26 @@ f () { cp -fv $1.png $1.pdf       ~/2020.2-C3/
 %%%
 }
 
-f 20201213_area_em_funcao_de_theta
-f 20201213_area_em_funcao_de_x
-f 20201213_area_fatias_pizza
+f 20210430_grad_422
+f 20210430_grad_423
+f 20210430_grad_444
+f 20210430_grad_444_intro
+f 20210430_grad_leia_a_definicao
+f 20210430_grad_notacao_bort
+f 20210430_grad_superficie_orig
+
+f 20210428_C3_exercicio_10
+
+
+f 20210428_C3_exercicio_9
+f 20210427_C3_gab
+f 20210428_C3_6a
+
+f 20210416_fp
+
+f 20210414_bortolossi_p240_a_b
+f 20210414_bortolossi_p240_c
+f 20210414_bortolossi_p240_d_e
 
 
 

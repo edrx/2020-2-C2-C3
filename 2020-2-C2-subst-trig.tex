@@ -26,17 +26,20 @@
 % (code-video     "c2m202stvideo" "$S/http/angg.twu.net/eev-videos/2020-2-C2-subst-trig.mp4")
 % (find-c2m202stvideo "0:00")
 
-% «.defs»		(to "defs")
-% «.title»		(to "title")
-% «.exercicio-1»	(to "exercicio-1")
-% «.exercicio-3»	(to "exercicio-3")
-% «.exercicio-4»	(to "exercicio-4")
-% «.exercicio-5»	(to "exercicio-5")
-% «.tabelas»		(to "tabelas")
-% «.derivada-f-inv»	(to "derivada-f-inv")
-% «.derivada-f-inv-2»	(to "derivada-f-inv-2")
-% «.exercicio-6»	(to "exercicio-6")
-%
+% «.defs»			(to "defs")
+% «.title»			(to "title")
+% «.exercicio-1»		(to "exercicio-1")
+% «.exercicio-3»		(to "exercicio-3")
+% «.exercicio-4»		(to "exercicio-4")
+% «.exercicio-5»		(to "exercicio-5")
+% «.tabelas»			(to "tabelas")
+% «.derivada-f-inv»		(to "derivada-f-inv")
+% «.derivada-f-inv-2»		(to "derivada-f-inv-2")
+% «.exercicio-6»		(to "exercicio-6")
+% «.exercicio-8-um-modo»	(to "exercicio-8-um-modo")
+% «.exercicio-8-um-modo-2»	(to "exercicio-8-um-modo-2")
+% «.exercicio-9»		(to "exercicio-9")
+
 % «.djvuize»	(to "djvuize")
 
 \documentclass[oneside,12pt]{article}
@@ -385,6 +388,84 @@ obteve nos exercícios 6 e 7 numa demonstração do \pfo{ApexDiff19}.
 Tente descobrir como.
 
 
+\newpage
+
+% «exercicio-8-um-modo»  (to ".exercicio-8-um-modo")
+% (c2m202stp 11 "exercicio-8-um-modo")
+% (c2m202st     "exercicio-8-um-modo")
+
+{\bf Um modo de fazer o exercício 8}
+
+Eu pus uma solução escrita à mão no próximo slide.
+
+Alguns comentários:
+
+\msk
+
+Num primeiro momento nós sabemos qual é a fórmula \pfo{ApexDiff19},
+mas ainda não sabemos como demonstrá-la; eu usei vários comentários em
+português pra deixar isso claro pro leitor. Além disso a maioria das
+demonstrações em Cálculo 2 são feitas por séries de igualdades em que
+o leitor deve conseguir entender porque cada uma daquelas igualdades é
+verdade, e em algumas das igualdades eu pus um comentário à direita
+pra ajudar o leitor a entendê-la.
+
+\newpage
+
+A minha demonstração {\sl poderia} dizer algo como
+%
+$$\text{Portanto \;\;\;} \frac{d}{dx} \arcsen x = \D \frac{1}{\sqrt{1-x^2}}$$
+%
+no final, mas eu omiti isso. Como o ``$\frac{d}{dx} \arcsen x$''
+aparece no início da série de igualdades e o
+``$\frac{1}{\sqrt{1-x^2}}$'' aparece no final dela eu considerei que
+esse ``$\text{Portanto } \frac{d}{dx} \arcsen x =
+\frac{1}{\sqrt{1-x^2}}$'' era óbvio.
+
+
+\newpage
+
+% «exercicio-8-um-modo-2»  (to ".exercicio-8-um-modo-2")
+% (c2m202stp 12 "exercicio-8-um-modo-2")
+% (c2m202st     "exercicio-8-um-modo-2")
+% (find-latexscan-links "C2" "20210407_demonstracao")
+% (find-xpdf-page "~/LATEX/2020-2-C2/20210407_demonstracao.pdf")
+
+\vspace*{-1.25cm}
+\includegraphics[height=9cm]{2020-2-C2/20210407_demonstracao.pdf}
+
+\newpage
+
+% «exercicio-9»  (to ".exercicio-9")
+% (c2m202stp 14 "exercicio-9")
+% (c2m202st     "exercicio-9")
+
+{\bf Exercício 9.}
+
+\ColorRed{Comece} a organizar as coisas que você já conseguiu demonstrar
+
+numa tabela como as tabelas de derivadas e integrais do APEX
+
+calculus, mas em que cada item é da forma
+%
+$$\pfo{Nome} \;\; = \;\; (\mathsf{expr_1} = \mathsf{expr_2})$$
+
+A sua tabela de fórmulas não precisa ter as demonstrações,
+
+mas 1) você deve saber demonstrar cada fórmula dela se precisar,
+
+e 2) cada demonstração só pode depender fórmulas que aparecem
+
+antes na tabela.
+
+\msk
+
+Obs: este exercício é ``permanente'', no sentido de que você
+
+vai continuar a acrescentar mais fórmulas na sua tabela à medida
+
+que você aprender a demonstrá-las.
+
 
 \GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
 
@@ -420,6 +501,8 @@ f () { cp -fv $1.png $1.pdf       ~/2020.2-C2/
 % (find-latexscan-links "C2" "$1")
 %%%
 }
+
+f 20210407_demonstracao
 
 f 20201213_area_em_funcao_de_theta
 f 20201213_area_em_funcao_de_x
