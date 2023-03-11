@@ -8,12 +8,14 @@
 -- (defun l () (interactive) (find-angg "LATEX/2020-2-C3-plano-tang.lua"))
 
 -- «.V3»		(to "V3")
+-- «.V3-tests»		(to "V3-tests")
 -- «.pictreplace»	(to "pictreplace")
+-- «.pictreplace-tests»	(to "pictreplace-tests")
 
 
 
--- (find-es "dednat" "V3")
 -- «V3»  (to ".V3")
+-- (find-es "dednat" "V3")
 --
 V3 = Class {
   type    = "V3",
@@ -34,6 +36,9 @@ V3 = Class {
     tostring = function (v) return v:v3string() end,
     v3string = function (v) return pformat("(%s,%s,%s)", v[1], v[2], v[3]) end,
     v2string = function (v) return tostring(v:tov2()) end,
+    --
+    -- Convert v3 to v2 using a primitive kind of perspective.
+    -- Adjust p1, p2, p3 to change the perspective.
     tov2 = function (v) return v[1]*v.p1 + v[2]*v.p2 + v[3]*v.p3 end,
     p1 = V{2,-1},
     p2 = V{2,1},
@@ -79,12 +84,34 @@ V3 = Class {
 
 v3 = function (x,y,z) return V3{x,y,z} end
 
+-- Choose one
 V3.__index.tostring = function (v) return v:v3string() end
 V3.__index.tostring = function (v) return v:v2string() end
 
 
+-- «V3-tests»  (to ".V3-tests")
+--[[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+loaddednat6()
+dofile "2020-2-C3-plano-tang.lua"
+= v3(2,3,4)
+= v3(2,3,4)*10
+= v3(2,3,4):v3string()
+= v3(2,3,4):v2string()
+
+= v3():xticks(4)
+= v3():axeswithticks(2,3,4)
+= v3():xygrid(2,3)
+
+--]]
+
+
+
+
 -- «pictreplace»  (to ".pictreplace")
--- (find-dn6 "heads6.lua" "lua-head")
+-- (find-es "dednat" "pictreplace")
 
 pictreplace = function (bigstr)
     local f = function (s) return tostring(expr(s)) end
@@ -102,22 +129,13 @@ registerhead "%P" {
     end,
 }
 
-
-
+-- «pictreplace-tests»  (to ".pictreplace-tests")
 --[[
  (eepitch-lua51)
  (eepitch-kill)
  (eepitch-lua51)
 loaddednat6()
 dofile "2020-2-C3-plano-tang.lua"
-= v3(2,3,4)
-= v3(2,3,4)*10
-= v3(2,3,4):v3string()
-= v3(2,3,4):v2string()
-
-= v3():xticks(4)
-= v3():axeswithticks(2,3,4)
-= v3():xygrid(2,3)
 = pictreplace "ab <v3(2,3,4):v3string()> cd"
 = pictreplace "ab <v3(2,3,4):v3string()> cd <\n>"
 

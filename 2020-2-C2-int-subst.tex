@@ -22,19 +22,22 @@
 % (find-CN-aula-links "2020-2-C2-int-subst" "2" "c2m202is" "c2is")
 %
 % Video:
-% (find-ssr-links "c2m202is" "2020-2-C2-int-subst")
+% (find-ssr-links "c2m202is" "2020-2-C2-int-subst" "{naoexiste}")
 % (code-video     "c2m202isvideo" "$S/http/angg.twu.net/eev-videos/2020-2-C2-int-subst.mp4")
 % (find-c2m202isvideo "0:00")
 
 % «.defs»			(to "defs")
 % «.subst-defs»			(to "subst-defs")
 % «.title»			(to "title")
+% «.intro»			(to "intro")
+% «.def-S2-S2I»			(to "def-S2-S2I")
 % «.exercicio-1»		(to "exercicio-1")
 % «.dicas-subst»		(to "dicas-subst")
 % «.dicas-subst-2»		(to "dicas-subst-2")
 % «.exemplo-gamb»		(to "exemplo-gamb")
 % «.gamb-livros»		(to "gamb-livros")
 % «.exercicio-2»		(to "exercicio-2")
+% «.senos-e-cossenos»		(to "senos-e-cossenos")
 % «.exemplo-1»			(to "exemplo-1")
 % «.exemplo-1-verif»		(to "exemplo-1-verif")
 % «.anotacoes-a-direita»	(to "anotacoes-a-direita")
@@ -111,6 +114,8 @@
 
 
 % «subst-defs»  (to ".subst-defs")
+% (c2m202isp 1 "subst-defs")
+% (c2m202isa   "subst-defs")
 % (find-LATEX "2020-1-C2-TFC2-2.tex" "subst-defs")
 
 \def\pfo#1{\ensuremath{\mathsf{[#1]}}}
@@ -259,7 +264,7 @@
 %
 % «title»  (to ".title")
 % (c2m202isp 1 "title")
-% (c2m202is    "title")
+% (c2m202isa   "title")
 
 \thispagestyle{empty}
 
@@ -283,6 +288,10 @@ Eduardo Ochs - RCN/PURO/UFF
 
 \newpage
 
+% «intro»  (to ".intro")
+% (c2m202isp 2 "intro")
+% (c2m202isa    "intro")
+
 Nos slides anteriores nós vimos como demonstrar a fórmula \pfo{S2}, e
 {\sl começamos} a ver como usá-la na prática... na verdade a gente
 costuma usar uma versão da \pfo{S2} para integrais {\sl indefinidas},
@@ -303,6 +312,10 @@ No slide seguinte eu pus a nossa versão para integrais indefinidas da
 \pfo{S3}, que eu chamei de \pfo{S3I}.
 
 \newpage
+
+% «def-S2-S2I»  (to ".def-S2-S2I")
+% (c2m202isp 3 "def-S2-S2I")
+% (c2m202isa   "def-S2-S2I")
 
 $\begin{array}{rcc}
  \pfo{S2} &=& \Stwo \\
@@ -325,7 +338,7 @@ $
 
 % «exercicio-1»  (to ".exercicio-1")
 % (c2m202isp 5 "exercicio-1")
-% (c2m202is    "exercicio-1")
+% (c2m202isa   "exercicio-1")
 
 {\bf Exercício 1.}
 
@@ -345,7 +358,7 @@ d) $\pfo{S3I} \, [g(x):=3x+4] \, [f(u) := \frac23 \cos u]$
 
 % «dicas-subst»  (to ".dicas-subst")
 % (c2m202isp 6 "dicas-subst")
-% (c2m202is    "dicas-subst")
+% (c2m202isa   "dicas-subst")
 
 {\bf Mais dicas sobre a operação `$[:=]$'}
 
@@ -380,7 +393,7 @@ $$
 
 % «dicas-subst-2»  (to ".dicas-subst-2")
 % (c2m202isp 7 "dicas-subst-2")
-% (c2m202is    "dicas-subst-2")
+% (c2m202isa   "dicas-subst-2")
 
 {\bf Mais dicas sobre a operação `$[:=]$' (2)}
 
@@ -439,7 +452,7 @@ $$
 
 % «exemplo-gamb»  (to ".exemplo-gamb")
 % (c2m202isp 9 "exemplo-gamb")
-% (c2m202is    "exemplo-gamb")
+% (c2m202isa   "exemplo-gamb")
 
 {\bf Exemplo com gambiarras}
 
@@ -464,7 +477,7 @@ antes ou depois das contas, ou omitida (!!!)...
 
 % «gamb-livros»  (to ".gamb-livros")
 % (c2m202isp 10 "gamb-livros")
-% (c2m202is     "gamb-livros")
+% (c2m202isa    "gamb-livros")
 
 {\bf A gambiarra nos livros}
 
@@ -495,7 +508,7 @@ mas nós só vamos ver um jeito de dar um significado
 
 % «exercicio-2»  (to ".exercicio-2")
 % (c2m202isp 11 "exercicio-2")
-% (c2m202is     "exercicio-2")
+% (c2m202isa    "exercicio-2")
 
 {\bf Exercício 2.}
 
@@ -523,6 +536,10 @@ num expressão em $x$ sem sinal de integral.
 
 \newpage
 
+% «senos-e-cossenos»  (to ".senos-e-cossenos")
+% (c2m202isp 12 "senos-e-cossenos")
+% (c2m202isa    "senos-e-cossenos")
+
 \thispagestyle{empty}
 
 \begin{center}
@@ -545,8 +562,8 @@ num expressão em $x$ sem sinal de integral.
 \newpage
 
 % «exemplo-1»  (to ".exemplo-1")
-% (c2m202isp 12 "exemplo-1")
-% (c2m202is     "exemplo-1")
+% (c2m202isp 13 "exemplo-1")
+% (c2m202isa    "exemplo-1")
 % (c2m201ipscp 2 "exemplo-1")
 % (c2m201ipsc    "exemplo-1")
 
@@ -582,7 +599,7 @@ $$
 
 % «exemplo-1-verif»  (to ".exemplo-1-verif")
 % (c2m202isp 13 "exemplo-1-verif")
-% (c2m202is     "exemplo-1-verif")
+% (c2m202isa    "exemplo-1-verif")
 % (c2m201ipscp 3 "exemplo-1-verif")
 % (c2m201ipsc    "exemplo-1-verif")
 
@@ -602,7 +619,7 @@ $$
 
 % «anotacoes-a-direita»  (to ".anotacoes-a-direita")
 % (c2m202isp 14 "anotacoes-a-direita")
-% (c2m202is     "anotacoes-a-direita")
+% (c2m202isa    "anotacoes-a-direita")
 
 {\bf As anotações à direita}
 
@@ -639,7 +656,7 @@ de $x$ pra $s$ e outra pra voltar pra $x$!...
 
 % «exemplo-2»  (to ".exemplo-2")
 % (c2m202isp 15 "exemplo-2")
-% (c2m202is     "exemplo-2")
+% (c2m202isa    "exemplo-2")
 % (c2m201ipscp 4 "exemplo-2")
 % (c2m201ipsc    "exemplo-2")
 
@@ -670,7 +687,7 @@ $$
 
 % «exercicio-3»  (to ".exercicio-3")
 % (c2m202isp 16 "exercicio-3")
-% (c2m202is     "exercicio-3")
+% (c2m202isa    "exercicio-3")
 % (c2m201ipscp 5 "exercicio-1")
 % (c2m201ipsc    "exercicio-1")
 
@@ -755,7 +772,7 @@ de técnicas mais avançadas que vamos ver depois.
 
 % «subst-trig-exemplo»  (to ".subst-trig-exemplo")
 % (c2m202isp 20 "subst-trig-exemplo")
-% (c2m202is     "subst-trig-exemplo")
+% (c2m202isa    "subst-trig-exemplo")
 
 \def\St{\sen θ}
 \def\Ct{\cos θ}

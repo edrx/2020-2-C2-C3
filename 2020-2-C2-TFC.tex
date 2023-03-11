@@ -20,23 +20,36 @@
 % http://angg.twu.net/LATEX/2020-2-C2-TFC.pdf
 % (find-LATEX "2019.mk")
 % (find-CN-aula-links "2020-2-C2-TFC" "2" "c2m202tfc" "c2t")
-%
-% Video:
-% (find-ssr-links "c2m202tfc" "2020-2-C2-TFC")
-% (code-video     "c2m202tfcvideo" "$S/http/angg.twu.net/eev-videos/2020-2-C2-TFC.mp4")
-% (find-c2m202tfcvideo "0:00")
 
+% «.video-1»			(to "video-1")
 % «.defs»			(to "defs")
 % «.subst-defs»			(to "subst-defs")
 % «.title»			(to "title")
+% «.uma-versao-do-TFC2»		(to "uma-versao-do-TFC2")
+% «.TFC2-igualdade»		(to "TFC2-igualdade")
+% «.integrar-chutando»		(to "integrar-chutando")
 % «.exercicio-1»		(to "exercicio-1")
 % «.exercicio-2»		(to "exercicio-2")
 % «.integral-indefinida»	(to "integral-indefinida")
+% «.intro»			(to "intro")
 % «.int-subst-2»		(to "int-subst-2")
 % «.exercicio-5»		(to "exercicio-5")
 % «.exercicio-6»		(to "exercicio-6")
 %
 % «.djvuize»	(to "djvuize")
+
+
+
+% «video-1»  (to ".video-1")
+% (c2m202tfca     "video-1")
+% (find-ssr-links     "c2m202tfc" "2020-2-C2-TFC")
+% (code-eevvideo      "c2m202tfc" "2020-2-C2-TFC")
+% (code-eevlinksvideo "c2m202tfc" "2020-2-C2-TFC")
+% (find-c2m202tfcvideo "0:00")
+% (find-c2m202tfcvideo "0:00" "18/mar/2021")
+% (find-c2m202tfcvideo "0:14" "exercicio 6")
+
+
 
 \documentclass[oneside,12pt]{article}
 \usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
@@ -218,7 +231,7 @@
 %
 % «title»  (to ".title")
 % (c2m202tfcp 1 "title")
-% (c2m202tfc    "title")
+% (c2m202tfca   "title")
 
 \thispagestyle{empty}
 
@@ -243,6 +256,10 @@ Eduardo Ochs - RCN/PURO/UFF
 \newpage
 
 \def\Rd{\ColorRed}
+
+% «uma-versao-do-TFC2»  (to ".uma-versao-do-TFC2")
+% (c2m202tfcp 2 "uma-versao-do-TFC2")
+% (c2m202tfca   "uma-versao-do-TFC2")
 
 Na aula passada nós vimos esta versão do \ColorRed{segundo}
 
@@ -278,6 +295,10 @@ $$
 
 \newpage
 
+% «TFC2-igualdade»  (to ".TFC2-igualdade")
+% (c2m202tfcp 3 "TFC2-igualdade")
+% (c2m202tfca   "TFC2-igualdade")
+
 Nós não vimos uma \ColorRed{demostração} do TFC2... vimos só uns
 argumentos que devem ter convencido vocês de que ele vale pra todas as
 funções escada. As notas do Pierluigi têm um esboço da demonstração,
@@ -297,6 +318,10 @@ $c,d∈[a,b]$, e nós vamos usar a operação $[:=]$ para obter \Rd{casos
 
 
 \newpage
+
+% «integrar-chutando»  (to ".integrar-chutando")
+% (c2m202tfcp 4 "integrar-chutando")
+% (c2m202tfca   "integrar-chutando")
 
 Digamos que queremos ``integrar'' isto:
 %
@@ -335,7 +360,7 @@ calcular senos e exponenciais em tempo finito.
 
 % «exercicio-1»  (to ".exercicio-1")
 % (c2m202tfcp 5 "exercicio-1")
-% (c2m202tfc    "exercicio-1")
+% (c2m202tfca   "exercicio-1")
 
 Vamos chamar o método do slide anterior de
 
@@ -385,7 +410,7 @@ Faça os 5 primeiros itens do Exercício 35 das notas do Pierluigi.
 
 % «integral-indefinida»  (to ".integral-indefinida")
 % (c2m202tfcp 7 "integral-indefinida")
-% (c2m202tfc    "integral-indefinida")
+% (c2m202tfca   "integral-indefinida")
 % (c2m201tfc22p 2 "integral-indefinida")
 % (c2m201tfc22    "integral-indefinida")
 % (find-martinscdipage (+ 10 109) "4.2.2       Integral Indefinida")
@@ -450,6 +475,10 @@ são verdadeiras. Porque é que isto não implica em $42 = 200$?
 
 
 \newpage
+
+% «intro»  (to ".intro")
+% (c2m202tfcp 9 "intro")
+% (c2m202tfca   "intro")
 
 {\bf (Introdução à) integração por substituição}
 
@@ -519,7 +548,7 @@ $$
 
 % «exercicio-5»  (to ".exercicio-5")
 % (c2m202tfcp 11 "exercicio-5")
-% (c2m202tfc     "exercicio-5")
+% (c2m202tfca    "exercicio-5")
 
 Lembre que:
 
@@ -559,7 +588,7 @@ d) Os itens (a), (b) e (c) provam as três igualdades da $\pfo{S1}$?
 
 % «exercicio-6»  (to ".exercicio-6")
 % (c2m202tfcp 12 "exercicio-6")
-% (c2m202tfc     "exercicio-6")
+% (c2m202tfca    "exercicio-6")
 
 {\bf Exercício 6.}
 

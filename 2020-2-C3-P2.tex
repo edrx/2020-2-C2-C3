@@ -485,9 +485,72 @@ $$
 % F(x_0+α, y_0+β) = 
 % Dica: mostre como 
 
-
 % (c3m202planotangp 31 "grad-intro")
 % (c3m202planotang     "grad-intro")
+
+
+\newpage
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{2.0cm}
+
+{\bf \Large Gabarito}
+
+(incompleto)
+
+\end{center}
+
+
+\newpage
+
+{\bf Questão 1: gabarito}
+
+\msk
+
+1a) $z=F(x,y)$ é um plano, então $F(x,y)$ é da forma $F(x,y) = αx + βy
++ γ$; precisamos encontrar os valores de $α$, $β$ e $γ$. Sabemos que
+$(0,0,c)∈S$, portanto $F(0,0) = c$; temos $F(0,0) = α·0 + β·0 + γ =
+γ$, portanto $γ=c$ e $F(x,y) = αx + βy + c$. Sabemos que $F(a,0) = 0$,
+portanto $α·a + β·0 + c = 0$, portanto $αa = -c$ e $α=-\frac{c}{a}$;
+Sabemos que $F(0,b) = 0$, portanto $α·0 + β·b + c = 0$, portanto
+$β=-\frac{c}{b}$; conclusão, $F(x,y) = -\frac{c}{a}x - \frac{c}{b}y +
+c$.
+
+\msk
+
+1b) $F(x,y) = -\frac{c}{a}x - \frac{c}{b}y + c$, portanto $F_x(x,y) =
+-\frac{c}{a}$, $F_y(x,y) = -\frac{c}{b}$, $F_x(x_0,y_0) =
+-\frac{c}{a}$, $F_y(x_0,y_0) = -\frac{c}{b}$.
+
+\msk
+
+1c) $D = \frac{(a,0,0) + (0,b,0)}{2} = (\frac a2, \frac b2, 0)$; $D_0
+= (\frac a2, \frac b2)$.
+
+\newpage
+
+{\bf Questão 1: gabarito (cont.)}
+
+\msk
+
+1d) $F(x,y) = -\frac{c}{a}x - \frac{c}{b}y + c$,
+
+$DF(x,y) = \bmat{F_x(x,y) & F_y(x,y)} = \bmat{-\frac{c}{a} &
+  -\frac{c}{b}}$,
+
+$DF(D_0) = DF(\frac a2, \frac b2) =
+\bmat{F_x(\frac{a}{2},\frac{b}{2}) & F_y(\frac{a}{2},\frac{b}{2})}
+= \bmat{-\frac{c}{a} & -\frac{c}{b}}$.
+
+\msk
+
+1e) $∇F(D_0) = \VEC{F_x(D_0), F_y(D_0)} = \VEC{-\frac{c}{a},
+  \frac{c}{b}}$
+
+\newpage
 
 
 
@@ -527,6 +590,8 @@ f () { cp -fv $1.png $1.pdf       ~/2020.2-C3/
 % (find-latexscan-links "C3" "$1")
 %%%
 }
+
+f 20210517_hierarchy
 
 f 20210430_C3_P2_fig_1.2
 f 20210501_C3_P2_dica

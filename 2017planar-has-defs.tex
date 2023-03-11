@@ -11,6 +11,7 @@
 % «.defpicturedots»	(to "defpicturedots")
 % «.picturedotsdef»	(to "picturedotsdef")
 % «.defub»		(to "defub")
+% «.sa-and-ga»		(to "sa-and-ga")
 
 
 
@@ -258,6 +259,10 @@
   \fi
 }
 
+
+% «sa-and-ga»  (to ".sa-and-ga")
+\def\sa#1#2{\expandafter\def\csname myarg#1\endcsname{#2}}
+\def\ga#1{\csname myarg#1\endcsname}
 
 
 

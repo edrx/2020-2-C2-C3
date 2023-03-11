@@ -17,20 +17,41 @@
 % http://angg.twu.net/LATEX/2020-2-C2-intro.pdf
 % (find-LATEX "2019.mk")
 % (find-CN-aula-links "2020-2-C2-intro" "2" "c2m202intro" "c2m202i")
-%
-% Video:
-% (find-ssr-links "c2intro" "2020.2-C2-intro")
-% (code-video     "c2introvideo" "$S/http/angg.twu.net/eev-videos/2020.2-C2-intro.mp4")
-% (find-c2introvideo "0:00")
 
+% «.video-subst»		(to "video-subst")
+%
 % «.defs»			(to "defs")
 % «.title»			(to "title")
 % «.intro»			(to "intro")
+% «.EDOs»			(to "EDOs")
+% «.chutar-e-testar»		(to "chutar-e-testar")
 % «.subst-zoomed»		(to "subst-zoomed")
 % «.corrigir-igual»		(to "corrigir-igual")
 % «.regra-da-cadeia»		(to "regra-da-cadeia")
 % «.acrescentamos»		(to "acrescentamos")
 % «.algumas-traducoes»		(to "algumas-traducoes")
+
+% Video:
+% «video-subst»  (to ".video-subst")
+% (c2m202introa       "video-subst")
+% (find-ssr-links     "c2intro" "2020.2-C2-intro" "ZbKOS5yElzg")
+% (code-eevvideo      "c2intro" "2020.2-C2-intro" "ZbKOS5yElzg")
+% (code-eevlinksvideo "c2intro" "2020.2-C2-intro" "ZbKOS5yElzg")
+% (find-c2introvideo "0:00" "Oi")
+% (find-c2introvideo "1:07" "uma noção bem por alto do que são EDOs")
+% (find-c2introvideo "2:02" "vamos ter que testar")
+% (find-c2introvideo "2:20" "equação de 2º grau")
+% (find-c2introvideo "2:52" "encontre uma função f")
+% (find-c2introvideo "4:05" "[:=]")
+% (find-c2introvideo "7:39" "aqui tem alguns detalhes")
+% (find-c2introvideo "9:18" "Primeira utilidade")
+% (find-c2introvideo "10:32" "(2+2=5) = (5=5)")
+% (find-c2introvideo "11:10" "a gente tem varios `='s")
+% (find-c2introvideo "12:11" "segundo teste")
+% (find-c2introvideo "12:45" "não adianta tratar esse `=' como afirmação")
+% (find-c2introvideo "12:57" "(2+2=5) = (5=5)")
+% (find-c2introvideo "13:52" "eu só vou corrigir os sinais de `='")
+% (find-c2introvideo "14:00")
 
 \documentclass[oneside,12pt]{article}
 \usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
@@ -112,7 +133,7 @@
 %
 % «title»  (to ".title")
 % (c2m202introp 1 "title")
-% (c2m202intro    "title")
+% (c2m202introa   "title")
 %
 % Aulas:
 % 2021feb03 turma E1
@@ -149,7 +170,7 @@ Eduardo Ochs - RCN/PURO/UFF
 %                          
 % «intro»  (to ".intro")
 % (c2m202introp 2 "intro")
-% (c2m202intro     "intro")
+% (c2m202introa    "intro")
 \section{Introdução ao curso}
 
 O curso de Cálculo 2 é principalmente sobre dois assuntos: {\bf
@@ -192,6 +213,10 @@ por baixo pela reta $y=0$.
 
 \newpage
 
+% «EDOs»  (to ".EDOs")
+% (c2m202introp 4 "EDOs")
+% (c2m202introa   "EDOs")
+
 {\bf Equações diferenciais} (lembre: ``ordinárias'' $→$ ``EDOs'') são
 um pouco mais complicadas do que as equações que já sabemos
 resolver...
@@ -225,6 +250,10 @@ $f'(x) = x^4$ \ColorRed{para todo $x$}. Esse ``para todo $x$'' fica
 \ColorRed{implícito}.
 
 \newpage
+
+% «chutar-e-testar»  (to ".chutar-e-testar")
+% (c2m202introp 5 "chutar-e-testar")
+% (c2m202introa   "chutar-e-testar")
 
 \section{Chutar e testar}
 
@@ -282,7 +311,7 @@ $$(x^y+2x) \bmat{x:=10a+b \\ y:=3c+4d} = (10a+b)^{3c+4d} + 2(10a+b)$$
 
 % «subst-zoomed»  (to ".subst-zoomed")
 % (c2m202introp 7 "subst-zoomed")
-% (c2m202intro    "subst-zoomed")
+% (c2m202introa   "subst-zoomed")
 
 Repare: em
 %
@@ -327,7 +356,7 @@ Note que os `$=$'s das expressões entre parênteses são
 
 % «corrigir-igual»  (to ".corrigir-igual")
 % (c2m202introp 9 "corrigir-igual")
-% (c2m202intro    "corrigir-igual")
+% (c2m202introa   "corrigir-igual")
 
 {\bf ``Eu só vou corrigir os sinais de igual''}
 
@@ -397,7 +426,7 @@ do meio escrevemos $f(u) := \sen u$ ao invés de $f := \sen$, e...
 
 % «acrescentamos»  (to ".acrescentamos")
 % (c2m202introp 12 "acrescentamos")
-% (c2m202intro     "acrescentamos")
+% (c2m202introa    "acrescentamos")
 
 $$[RC] \;\; := \;\; \left( \ddx f(g(x)) = f'(g(x))g'(x) \right)$$
 
@@ -443,7 +472,7 @@ $f(x) = \sqrt{1-x^2}$, $f(x) = \sqrt{4-x^2}$.
 
 % «algumas-traducoes»  (to ".algumas-traducoes")
 % (c2m202introp 14 "algumas-traducoes")
-% (c2m202intro     "algumas-traducoes")
+% (c2m202introa    "algumas-traducoes")
 
 \thispagestyle{empty}
 

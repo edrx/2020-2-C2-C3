@@ -20,18 +20,10 @@
 % http://angg.twu.net/LATEX/2020-2-C2-edovs.pdf
 % (find-LATEX "2019.mk")
 % (find-CN-aula-links "2020-2-C2-edovs" "2" "c2m202edovs" "c2evs")
-%
-% Videos:
-% (find-ssr-links "c2m202edovs" "2020-2-C2-edovs")
-% (code-video     "c2m202edovsvideo" "$S/http/angg.twu.net/eev-videos/2020-2-C2-edovs.mp4")
-% (find-c2m202edovsvideo "0:00")
-% (find-c2m202edovsvideo "6:30" "desenhando os coefs angs só desses 10 pontos daqui")
 
-% (find-ssr-links "c2m202edovs2" "2020-2-C2-edovs-2")
-% (code-video "c2m202edovs2video" "$S/http/angg.twu.net/eev-videos/2020-2-C2-edovs-2.mp4")
-% (find-c2m202edovs2video "0:00")
-% (find-c2m202edovs2video "0:50" "como se a gente ainda não soubesse o caso geral")
-
+% «.videos»			(to "videos")
+% «.video-1»			(to "video-1")
+% «.video-2»			(to "video-2")
 % «.defs»			(to "defs")
 % «.title»			(to "title")
 % «.introducao»			(to "introducao")
@@ -41,10 +33,39 @@
 % «.como-testar-sols»		(to "como-testar-sols")
 % «.como-testar-uma-sol»	(to "como-testar-uma-sol")
 % «.exercicio-3»		(to "exercicio-3")
-% «.exercicio-4»	(to "exercicio-4")
-% «.exercicio-5»	(to "exercicio-5")
+% «.exercicio-4»		(to "exercicio-4")
+% «.exercicio-5»		(to "exercicio-5")
 %
 % «.djvuize»			(to "djvuize")
+
+% «videos»  (to ".videos")
+% (c2m202edovsa  "videos")
+
+% «video-1»  (to ".video-1")
+% (c2m202edovsa   "video-1")
+% (find-ssr-links     "c2m202edovs" "2020-2-C2-edovs" "bNfZUomf1xg")
+% (code-eevvideo      "c2m202edovs" "2020-2-C2-edovs" "bNfZUomf1xg")
+% (code-eevlinksvideo "c2m202edovs" "2020-2-C2-edovs" "bNfZUomf1xg")
+% (find-c2m202edovsvideo "0:00")
+% (find-c2m202edovsvideo "5:54" "a gente vai interpretar esse f'(x)")
+% (find-c2m202edovsvideo "6:30" "desenhando os coefs angs só desses 10 pontos daqui")
+% (find-c2m202edovsvideo "7:37" "Exercício 1")
+% (find-c2m202edovsvideo "8:10" "figuras do Thomas")
+% (find-c2m202edovsvideo "9:10" "ele faz vários desenhos")
+% (find-c2m202edovsvideo "9:30" "aqui vocês vão fazer 7 desenhos diferentes")
+% (find-c2m202edovsvideo "10:50" "quais dessas curvas parecem ser soluções")
+
+% «video-2»  (to ".video-2")
+% (c2m202edovsa   "video-2")
+% (find-ssr-links     "c2m202edovs2" "2020-2-C2-edovs-2" "Ejr2wvpBiTE")
+% (code-eevvideo      "c2m202edovs2" "2020-2-C2-edovs-2" "Ejr2wvpBiTE")
+% (code-eevlinksvideo "c2m202edovs2" "2020-2-C2-edovs-2" "Ejr2wvpBiTE")
+% (find-c2m202edovs2video "0:00")
+% (find-c2m202edovs2video "0:50" "como se a gente ainda não soubesse o caso geral")
+% (find-c2m202edovs2video "8:25" "eu vou traduzir dy/dx=-x/y pra")
+% (find-c2m202edovs2video "8:44" "a gente quer uma solução que obedeça")
+% (find-c2m202edovs2video "8:55" "f(2)=3")
+% (find-c2m202edovs2video "9:14" "algebricamente a gente quer o valor de C_4")
 
 \documentclass[oneside,12pt]{article}
 \usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
@@ -128,7 +149,7 @@
 %
 % «title»  (to ".title")
 % (c2m202edovsp 1 "title")
-% (c2m202edovs    "title")
+% (c2m202edovsa   "title")
 
 \thispagestyle{empty}
 
@@ -154,7 +175,7 @@ Eduardo Ochs - RCN/PURO/UFF
 
 % «introducao»  (to ".introducao")
 % (c2m202edovsp 2 "introducao")
-% (c2m202edovs    "introducao")
+% (c2m202edovsa   "introducao")
 
 {\bf Introdução}
 
@@ -201,7 +222,7 @@ $$f'(x) = 2x, \qquad f(2)=5$$
 
 % «campos-dirs»  (to ".campos-dirs")
 % (c2m202edovsp 4 "campos-dirs")
-% (c2m202edovs    "campos-dirs")
+% (c2m202edovsa   "campos-dirs")
 
 {\bf Campos de direções}
 
@@ -261,7 +282,7 @@ coeficientes angulares naqueles pontos são gráficos de
 
 % «exercicio-1»  (to ".exercicio-1")
 % (c2m202edovsp 5 "exercicio-1")
-% (c2m202edovs    "exercicio-1")
+% (c2m202edovsa   "exercicio-1")
 
 {\bf Exercício 1.}
 
@@ -291,7 +312,7 @@ g) & $\dydx = -y/x$ \\
 
 % «exercicio-2»  (to ".exercicio-2")
 % (c2m202edovsp 6 "exercicio-2")
-% (c2m202edovs    "exercicio-2")
+% (c2m202edovsa   "exercicio-2")
 
 {\bf Exercício 2.}
 
@@ -389,7 +410,7 @@ $
 
 % «como-testar-uma-sol»  (to ".como-testar-uma-sol")
 % (c2m202edovsp 11 "como-testar-uma-sol")
-% (c2m202edovs     "como-testar-uma-sol")
+% (c2m202edovsa    "como-testar-uma-sol")
 
 {\bf Como testar uma solução}
 
@@ -451,7 +472,7 @@ delas como constantes.
 
 % «exercicio-3»  (to ".exercicio-3")
 % (c2m202edovsp 13 "exercicio-3")
-% (c2m202edovs     "exercicio-3")
+% (c2m202edovsa    "exercicio-3")
 
 {\bf Exercício 3.}
 
@@ -552,7 +573,7 @@ chegou na inversa certa.
 
 % «exercicio-4»  (to ".exercicio-4")
 % (c2m202edovsp 17 "exercicio-4")
-% (c2m202edovs     "exercicio-4")
+% (c2m202edovsa    "exercicio-4")
 
 {\bf Exercício 4.} 
 
@@ -610,7 +631,7 @@ e a operação `$[:=]$'.
 
 % «exercicio-5»  (to ".exercicio-5")
 % (c2m202edovsp 18 "exercicio-5")
-% (c2m202edovs     "exercicio-5")
+% (c2m202edovsa    "exercicio-5")
 
 {\bf Exercício 5.}
 
